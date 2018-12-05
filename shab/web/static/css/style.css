@@ -1,0 +1,200 @@
+@font-face {
+
+    font-family: Iransans;
+    src: url('iransans/woff/IRANSansWeb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body  {
+ background-repeat: no-repeat;
+ background-color: rgb(224,224,224);
+ font-family: Iransans;
+ line-height:1.5em;
+ font-size: 0.75rem;
+}
+
+
+
+
+.user {
+  width: 150%;
+  height: 150%;
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.mid {
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  font-size:100%;
+}
+
+.share {
+  font-size:100%;
+}
+.gray{
+  color:gray;
+}
+
+.red{
+  color:red;
+}
+
+.icon{
+  padding: 10%;
+}
+
+.intro{
+  background-color: rgb(242,245,242);
+  color: rgba(0, 0, 0, 0.749);
+border-radius: 10px;
+padding: 2%;
+margin-top:5%;
+text-align: justify;
+}
+
+.fill {
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+.navbar {
+    position: relative;
+}
+.brand {
+    position: absolute;
+    left: 50%;
+    margin-left: -10% !important;  /* 50% of your logo width */
+    display: block;
+}
+
+
+.bdg{
+  margin: 1%;
+  font-size: 0.8rem;
+  font-style:normal;
+  font-weight: normal;
+  border-color: black;
+
+
+}
+
+.card-title{
+  margin-bottom: 1.6rem !important;
+}
+
+
+.divintro{
+  margin-bottom: 2rem;
+}
+
+.card-text{
+  color: rgba(0, 0, 0, 0.702);
+  line-height: 1.625;
+  text-align: justify;
+}
+
+
+.mycard{
+  margin-top: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 3%;
+
+}
+
+.nav-item{
+  font-size: 0.8rem;
+  color: white;
+}
+
+.nav-link{
+  font-size: 0.8rem;
+  color: white;
+}
+
+
+@media (min-width: 768px) {
+  /* show 3 items */
+  .carousel-inner .active,
+  .carousel-inner .active + .carousel-item,
+  .carousel-inner .active + .carousel-item + .carousel-item {
+    display: block;
+  }
+
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+    transition: none;
+  }
+
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: absolute;
+    top: 0;
+    right: -33.3333%;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* left or forward direction */
+  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+  .carousel-item-next.carousel-item-left + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  /* farthest right hidden item must be abso position for animations */
+  .carousel-inner .carousel-item-prev.carousel-item-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* right or prev direction */
+  .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+  .carousel-item-prev.carousel-item-right + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+  }
+}
+
+
+.sldr{
+  padding:  2%;
+}
+
+.card-columns {
+    column-count: 5;
+}
+
+
+
+
+
+
