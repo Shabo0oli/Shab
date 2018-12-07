@@ -12,7 +12,7 @@ body  {
  background-color: rgb(224,224,224);
  font-family: Iransans;
  line-height:1.5em;
- font-size: 0.75rem;
+ font-size: 0.8vw;
 }
 
 
@@ -142,5 +142,3 @@ line-height: 1.8 !important;
 .card-columns {
     column-count: 5;
 }
-
-
