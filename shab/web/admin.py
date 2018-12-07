@@ -17,7 +17,7 @@ class Postdate(SummernoteModelAdmin):
     list_filter = (
         ('Date', JDateFieldListFilter),
     )
-    summernote_fields = ('Text',)
+    summernote_fields = ('Text','About')
 
 
 class Commentdate(SummernoteModelAdmin):
@@ -30,4 +30,5 @@ class Commentdate(SummernoteModelAdmin):
 admin.site.register(Post, Postdate)
 admin.site.register(Comment, Commentdate)
 admin.site.register(Like)
+admin.site.register(Banner)
 

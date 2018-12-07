@@ -8,7 +8,7 @@ from taggit.managers import TaggableManager
 
 
 # Create your models here.
-
+import datetime
 
 class Post(models.Model):
     Title = models.TextField(blank=False)
@@ -32,12 +32,13 @@ class Comment(models.Model):
     Author = models.CharField(max_length=50)
     objects = jmodels.jManager()
     Date = jmodels.jDateField()
-    Time = models.TimeField()
+    models.DateTimeField(default=datetime.datetime.now())
     Email = models.EmailField(null=True)
+    Valid = models.BooleanField(default=False)
 
 class Like(models.Model):
     RelPost = models.ForeignKey(Post,on_delete=models.CASCADE)
     Author = models.CharField(max_length=50)
 
 class Banner(models.Model) :
-    PostLink = models.ForeignKey(Post , on_delete=models.CASCADE)
+    PostLink = models.ForeignKey(Post , related_name='banner' ,  on_delete=models.CASCADE)

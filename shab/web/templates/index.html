@@ -4,230 +4,325 @@
 {% block content %}
 <nav class="navbar navbar-expand-lg" style="background-color:rgb(149,53,102)">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"><i class="fas fa-bars"></i> </span>
-    </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i> </span>
+  </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">لذت متن <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">لذت نقد</a>
-        </li>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">لذت متن <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">لذت نقد</a>
+      </li>
 
-        <li class="nav-item col-2 brand">
-          <img src="{% static 'img/brand.png' %}" class="img-fluid">
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item"> <a class="nav-link" href="#">چهل سالگی</a></li>
-        <li class="nav-item"> <a class="nav-link" href="#">پادساعت</a></li>
-        <li class="nav-item"> <a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
-      </ul>
+      <li class="nav-item col-2 brand">
+        <a href="{% url 'index' %}"> <img src="{% static 'img/brand.png' %}" class="img-fluid"> </a>
+       </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item"> <a class="nav-link" href="#">چهل سالگی</a></li>
+      <li class="nav-item"> <a class="nav-link" href="#">پادساعت</a></li>
+      <li class="nav-item"> <a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
+    </ul>
 
-      </div>
+  </div>
 
 
 
 </nav>
 
+
+
+
 <div class="row" style="background-color:rgb(149,53,102);">
+ <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+   <ol class="carousel-indicators">
+     {% for b1,b2 in banners %}
+    <li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.counter}}" class="{% if forloop.counter == 1 %} active {% endif %}"></li>
+    {% endfor %}
+  </ol>
+  <div class="carousel-inner">
 
-      <div class="col-6 sldr">
-        <div class="card mycard shadow">
-          <div class="card-body row">
-            <div class="card-title col-6 fill"  style="background-image: url('avatar.jpg'); border-radius:3%;" >
-            </div>
+  {% for b1 , b2 in banners %}
+  <div class="carousel-item {{forloop.counter}} {% if forloop.counter == 1 %} active  {% endif %}"><div class="row">
+  {% if b1.Type == 'bigimage'%}
 
-
-            <div class="col-6">
-              <div class="row" style="padding:5%;">
-                <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> بیایید در این شرایط اقتصادی احتکار نکنیم  </p> </div>
-                <div class="row col-12"><h6> بیایید در این شرایط اقتصادی احتکار نکنیم  </h6> </div>
-              </div>
-              <div class="divintro"><p class="card-text"> بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتی احتکار نکنی</p></div>
-            </div>
-
+  <div class="col-6 sldr" >
+    <div class="card mycard shadow zoom" onclick="location.href='/post/{{b1.id}}';">
+      <div class="card-body row">
+        <div class="card-title col-6 fill"  style="background-image: url('/media/{{b1.PostImage}}'); border-radius:3%;" >
+        </div>
+        <div class="col-6">
+          <div class="row" style="padding:5%;">
+            <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b1.About|safe}}  </p> </div>
+            <div class="row col-12"><h6> {{ b1.Title|safe }}  </h6> </div>
           </div>
+          <div class="divintro"><p class="card-text"> {{b1.Text|safe|slice:":130"}}</p></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {% endif %}
+
+
+  {% if b1.Type == 'thumbbase'%}
+
+  <div class="col-6 sldr" >
+    <div class="card mycard shadow zoom" onclick="location.href='/post/{{b1.id}}';">
+      <div class="card-body row">
+        <div class="card-title col-6 fill"  style="background-image: url('/media/{{b1.PostImage}}'); border-radius:3%;" >
+        </div>
+        <div class="col-6">
+          <div class="row" style="padding:5%;">
+            <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b1.About|safe}}  </p> </div>
+            <div class="row col-12"><h6> {{ b1.Title|safe }}  </h6> </div>
+          </div>
+          <div class="divintro"><p class="card-text"> {{b1.Text|safe|slice:":250"}}</p></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {% endif %}
 
 
 
+  {% if b1.Type == 'avatarbase' %}
 
-
+  <div class="col-6 sldr">
+    <div class="card mycard shadow zoom" onclick="location.href='/post/{{b1.id}}';">
+      <div class="card-body">
+        <div class="row mid">
+          <div class="col-6">
+            <div class="row">
+              <div class="col-4 mid"><img src="/media/{{b1.Avatar}}" class="rounded-circle img-fluid"></div>
+              <div class="col-8 mid"> <h6>{{b1.Title}}  </h6></div>
+            </div>
+            <div class="row">
+              <div class="divintro mid"><span class="intro"> {{b1.SubTitle|safe}}</span></div>
+            </div>
+          </div>
+          <div class="col-6 mid">
+            <div class="divintro"><p class="card-text">{{b1.Text|safe|slice:":130"}}</p></div>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  {% endif %}
 
 
-        <div class="col-6 sldr">
-        <div class="card mycard shadow">
-          <div class="card-body">
-            <div class="row mid">
-              <div class="col-6">
-                <div class="row">
-                  <div class="col-4 mid"><img src="avatar.jpg" class="rounded-circle img-fluid"></div>
-                  <div class="col-8 mid"> <h6> بیایید در این شرایط اقتصادی احتکار نکنیم  </h6></div>
-                </div>
-                <div class="row">
-                  <div class="divintro mid"><span class="intro"> بیایید در این شرایط اقتصادی احتکار نکنی</span></div>
-                </div>
-              </div>
-              <div class="col-6 mid">
-                <div class="divintro"><p class="card-text"> بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در ی احتکار نکنی</p></div>
-              </div>
-            </div>
 
+
+
+
+
+
+
+
+
+
+            {% if b2.Type == 'bigimage'%}
+
+  <div class="col-6 sldr" >
+    <div class="card mycard shadow zoom" onclick="location.href='/post/{{b2.id}}';">
+      <div class="card-body row">
+        <div class="card-title col-6 fill"  style="background-image: url('/media/{{b2.PostImage}}'); border-radius:3%;" >
+        </div>
+        <div class="col-6">
+          <div class="row" style="padding:5%;">
+            <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b2.About|safe}}  </p> </div>
+            <div class="row col-12"><h6> {{ b2.Title|safe }}  </h6> </div>
+          </div>
+          <div class="divintro"><p class="card-text"> {{b2.Text|safe|slice:":130"}}</p></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {% endif %}
+
+
+  {% if b2.Type == 'thumbbase'%}
+
+  <div class="col-6 sldr" >
+    <div class="card mycard shadow zoom" onclick="location.href='/post/{{b2.id}}';">
+      <div class="card-body row">
+        <div class="card-title col-6 fill"  style="background-image: url('/media/{{b2.PostImage}}'); border-radius:3%;" >
+        </div>
+        <div class="col-6">
+          <div class="row" style="padding:5%;">
+            <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b2.About|safe}}  </p> </div>
+            <div class="row col-12"><h6> {{ b2.Title|safe }}  </h6> </div>
+          </div>
+          <div class="divintro"><p class="card-text"> {{b2.Text|safe|slice:":250"}}</p></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {% endif %}
+
+
+
+  {% if b2.Type == 'avatarbase' %}
+
+  <div class="col-6 sldr " >
+    <div class="card mycard shadow zoom" onclick="location.href='/post/{{b2.id}}';">
+      <div class="card-body">
+        <div class="row mid">
+          <div class="col-6">
             <div class="row">
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-
+              <div class="col-4 mid"><img src="/media/{{b2.Avatar}}" class="rounded-circle img-fluid"></div>
+              <div class="col-8 mid"> <h6>{{b2.Title}}  </h6></div>
             </div>
-
+            <div class="row">
+              <div class="divintro mid"><span class="intro"> {{b2.SubTitle|safe}}</span></div>
+            </div>
+          </div>
+          <div class="col-6 mid">
+            <div class="divintro"><p class="card-text">{{b2.Text|safe|slice:":130"}}</p></div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
+  {% endif %}
+
+
+
+
+
+
+          </div></div>
+  {% endfor %}
+
+  </div>
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+ </div>
 </div>
 
-
-<div class="card-columns" style="margin-left: 3% ; margin-right: 3%">
-  <div class="card mycard shadow">
-          <div class="card-body">
-            <div class="row mid">
-              <div class="col-6">
-                <div class="row">
-                  <div class="col-4 mid"><img src="avatar.jpg" class="rounded-circle img-fluid"></div>
-                  <div class="col-8 mid"> <h6> بیایید در این شرایط اقتصادی احتکار نکنیم  </h6></div>
-                </div>
-                <div class="row">
-                  <div class="divintro mid"><span class="intro"> بیایید در این شرایط اقتصادی احتکار نکنی</span></div>
-                </div>
-              </div>
-              <div class="col-6 mid">
-                <div class="divintro"><p class="card-text"> بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در ی احتکار نکنی</p></div>
-              </div>
-            </div>
-
-            <div class="row">
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-
-            </div>
-
+<div class="card-columns" style="margin-left: 2% ; margin-right: 2%">
+  {% for post in posts %}
+  {% if post.Type == 'avatarbase' %}
+  <div class="card mycard zoom" onclick="location.href='/post/{{post.id}}';">
+    {%if post.Category == 'article' %} <div class="card-header" style="background-color: #00aeef;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'LM' %} <div class="card-header" style="background-color: #28ef7d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'LN' %} <div class="card-header" style="background-color: #e2ef4d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'LK' %} <div class="card-header" style="background-color: #ef943d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'chel' %} <div class="card-header" style="background-color: #ef4059;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'PZ' %} <div class="card-header" style="background-color: #ef529c;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'GG' %} <div class="card-header" style="background-color: #aa4aef;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'PW' %} <div class="card-header" style="background-color: #56e9ef;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'RS' %} <div class="card-header" style="background-color: #07036a;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    <div class="card-body">
+      <div class="card-title">
+        <div class="row">
+          <div class="col-4">
+            <img src="/media/{{post.Avatar}}" class="rounded-circle img-fluid" ">
+          </div>
+          <div class="col-8 mid">
+            <h8> {{post.Title}}  </h8>
           </div>
         </div>
-
-  <div class="card mycard shadow">
-          <div class="card-body">
-            <div class="row mid">
-              <div class="col-6">
-                <div class="row">
-                  <div class="col-4 mid"><img src="avatar.jpg" class="rounded-circle img-fluid"></div>
-                  <div class="col-8 mid"> <h6> بیایید در این شرایط اقتصادی احتکار نکنیم  </h6></div>
-                </div>
-                <div class="row">
-                  <div class="divintro mid"><span class="intro"> بیایید در این شرایط اقتصادی احتکار نکنی</span></div>
-                </div>
-              </div>
-              <div class="col-6 mid">
-                <div class="divintro"><p class="card-text"> بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در ی احتکار نکنی</p></div>
-              </div>
-            </div>
-
-            <div class="row">
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-
-            </div>
-
+      </div>
+      <div class="row">
+        <div class="divintro"><span class="intro">{{post.SubTitle}}</span></div>
+      </div>
+      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|safe|slice:":300"}}</p></div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% if post.Type == 'bigimage' %}
+  <div class="card mycard zoom" onclick="location.href='/post/{{post.id}}';">
+    {%if post.Category == 'article' %} <div class="card-header" style="background-color: #00aeef;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'LM' %} <div class="card-header" style="background-color: #28ef7d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'LN' %} <div class="card-header" style="background-color: #e2ef4d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'LK' %} <div class="card-header" style="background-color: #ef943d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'chel' %} <div class="card-header" style="background-color: #ef4059;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'PZ' %} <div class="card-header" style="background-color: #ef529c;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'GG' %} <div class="card-header" style="background-color: #aa4aef;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'PW' %} <div class="card-header" style="background-color: #56e9ef;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'RS' %} <div class="card-header" style="background-color: #07036a;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    <div class="card-body">
+      <div class="card-title">
+        <div class="row">
+          <div class="col-12">
+            <img src="/media/{{post.PostImage}}" class="img-fluid" style="border-radius: 5%";>
           </div>
         </div>
-  <div class="card mycard shadow">
-          <div style="background-color: mediumpurple ;height: 0.3rem; border-radius: 25%;" ></div>
-          <div class="card-body">
-            <div class="row mid">
-              <div class="col-6">
-                <div class="row">
-                  <div class="col-4 mid"><img src="avatar.jpg" class="rounded-circle img-fluid"></div>
-                  <div class="col-8 mid"> <h6> بیایید در تصادی احتکار نکنیم  </h6></div>
-                </div>
-                <div class="row">
-                  <div class="divintro mid"><span class="intro"> بیایید در این ادی احتکار نکنی</span></div>
-                </div>
-              </div>
-              <div class="col-6 mid">
-                <div class="divintro"><p class="card-text"> بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنیتکار نکنی  بد ر نی</p></div>
-              </div>
-            </div>
-
-            <div class="row">
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-              <span class="bdg badge badge-pill badge-secondary">&nbsp&nbspبهمان&nbsp&nbsp</span>
-
-            </div>
-
+        <div class="row" style="padding-top : 5%;">
+          <div class="col-12 mid">
+            <h8> {{post.Title}}  </h8>
           </div>
         </div>
+      </div>
+      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|safe|slice:":300"}}</p></div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
 
+  {% if post.Type == 'thumbbase' %}
 
+  <div class="card mycard zoom" onclick="location.href='/post/{{post.id}}';">
+    {%if post.Category == 'article' %} <div class="card-header" style="background-color: #00aeef;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'LM' %} <div class="card-header" style="background-color: #28ef7d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'LN' %} <div class="card-header" style="background-color: #e2ef4d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'LK' %} <div class="card-header" style="background-color: #ef943d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'chel' %} <div class="card-header" style="background-color: #ef4059;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'PZ' %} <div class="card-header" style="background-color: #ef529c;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'GG' %} <div class="card-header" style="background-color: #aa4aef;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'PW' %} <div class="card-header" style="background-color: #56e9ef;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
+    {%if post.Category == 'RS' %} <div class="card-header" style="background-color: #07036a;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
 
-    <div class="card mycard shadow">
-      <div class="card card-accent-secondary mb-3" style="max-width: 18rem;"> </div>
-          <div class="card-body">
-            <div class="row mid">
-              <div class="col-6">
-                <div class="row">
-                  <div class="col-4 mid"><img src="avatar.jpg" class="rounded-circle img-fluid"></div>
-                  <div class="col-8 mid"> <h6> بیایید در تصادی احتکار نکنیم  </h6></div>
-                </div>
-                <div class="row">
-                  <div class="divintro mid"><span class="intro"> بیایید در این ادی احتکار نکنی</span></div>
-                </div>
-              </div>
-              <div class="col-6 mid">
-                <div class="divintro"><p class="card-text"> بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنیتکار نکنی  بد ر نی</p></div>
-              </div>
-            </div>
-
-
-
+    <div class="card-body">
+      <div class="card-title">
+        <div class="row">
+          <div class="col-6 fill" style="background-image: url('/media/{{post.PostImage}}'); border-radius: 8%;"></div>
+          <div class="col-6" style="padding: 10%;">
+            <div class="row"> <p> {{post.About|safe}} </p> </div>
+            <div class="row"> <h8> {{post.Title}}  </h8> </div>
           </div>
         </div>
+      </div>
+      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|safe|slice:":300"}}</p></div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
 
-  <div class="card mycard shadow">
-          <div class="card-body">
-            <div class="row mid">
-              <div class="col-6">
-                <div class="row">
-                  <div class="col-4 mid"><img src="avatar.jpg" class="rounded-circle img-fluid"></div>
-                  <div class="col-8 mid"> <h6> بیایید در تصادی احتکار نکنیم  </h6></div>
-                </div>
-                <div class="row">
-                  <div class="divintro mid"><span class="intro"> بیایید در این ادی احتکار نکنی</span></div>
-                </div>
-              </div>
-              <div class="col-6 mid">
-                <div class="divintro"><p class="card-text"> بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در این شرایط اقتصادی احتکار نکنی  بیایید در</p></div>
-              </div>
-            </div>
+
+  {% endfor %}
 
 
 
-          </div>
-        </div>
+
 </div>
-
-
-
 <script type="text/javascript" src="{% static 'js/js.js' %}"></script>
+<script>
+$(function(){
+$('.carousel').carousel()
+});
+
+
+</script>
 
 {% endblock %}

@@ -1,0 +1,209 @@
+
+{% load staticfiles %}
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html   lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="{% static 'favicon.ico' %}">
+
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css" integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous">
+
+  <!-- jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js" integrity="sha384-54+cucJ4QbVb99v8dcttx/0JRx4FHMmhOWi4W+xrXpKcsKQodCBwAvu3xxkZAwsH" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+  <script type="text/javascript" src="{% static 'js/js.js' %}"></script>
+
+
+
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+
+  <script>
+      $(document).ready(function(){
+          $(".heart").click(function() {
+              $(this).toggleClass("far fa");
+              $(this).toggleClass("gray red");
+          });
+      });
+
+
+
+
+
+
+  </script>
+
+  <title>شب روایت</title>
+
+
+
+</head>
+
+<body style="background: linear-gradient( rgb(178, 78, 158) 60%, rgb(224,224,224) 60%);
+ background-repeat: no-repeat;
+ background-color: rgb(224,224,224);
+ font-family: Iransans;">
+
+
+
+<!-- Page Content -->
+
+
+
+<nav class="navbar navbar-expand-lg">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i> </span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">لذت متن <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">لذت نقد</a>
+      </li>
+
+      <li class="nav-item col-2 brand">
+        <a href="{% url 'index' %}"> <img src="{% static 'img/brand.png' %}" class="img-fluid"> </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item"> <a class="nav-link" href="#">چهل سالگی</a></li>
+      <li class="nav-item"> <a class="nav-link" href="#">پادساعت</a></li>
+      <li class="nav-item"> <a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
+
+  </div>
+</nav>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
+      <div class="card mycard">
+        <div class="card-body">
+          <div class="card-title">
+            <div class="row">
+              <div class="col-10">
+                <img src="/media/{{post.PostImage}}" class="img-fluid">
+              </div>
+              <div class="col-2 mid">
+                <span class="icon"><i class=" heart far fa-heart gray">۲۳</i></span>
+                <span class="icon"><i class=" share fas fa-share-square gray"></i></span>
+              </div>
+            </div>
+            <div class="row" style="padding:5%;">
+              <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{post.About|safe}}  </p> </div>
+              <div class="row col-12"><h6> {{post.Title}} </h6> </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="divintro"><p class="card-text"> {{post.Text|safe}}</p></div>
+          </div>
+          <div class="row">
+            {% for tag in tags %}
+            <a class="bdg" href="/tag/{{tag}}"> <span class="bdg badge badge-pill badge-secondary">&nbsp&nbsp{{tag}}&nbsp&nbsp</span> </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  <div class="col-2">
+  </div>
+</div>
+  <div class="row">
+            <div class="col-2">
+
+            </div>
+            <div class="col-8">
+              <div class="card mycard" style="margin-top: 3% !important;" >
+                <div class="card-header text-center "> <h5> نظرات </h5> </div>
+                 <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                   <li class="list-group-item">Dapibus ac facilisis in</li>
+                      <li class="list-group-item">Vestibulum at eros</li>
+                          </ul>
+
+  <div class="card-footer">
+    <form id="form-comment" method="post">
+                  <div class="form-group">
+          {% csrf_token %}
+    </div>
+
+      <input type="hidden" name="postid" value="{{post.id}}" >
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">نام کامل شما</label>
+    <div class="col-sm-10">
+      <input type="text"  id='name' name='name' required  class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="email" class="col-sm-2 col-form-label">پست الکترونیک</label>
+    <div class="col-sm-10">
+      <input name="email" type="text" class="form-control" required id="email" >
+    </div>
+  </div>
+
+        <div class="form-group row">
+    <label for="text" class="col-sm-2 col-form-label">نظر شما </label>
+    <div class="col-sm-10">
+      <textarea name="text" type="text" class="form-control" required id="text" > </textarea>
+    </div>
+  </div>
+       <div class="form-group row">
+    <div class="col-sm-12">
+    <button type="submit" class="btn btn-primary btn-block">ارسال نظر</button>
+    </div>
+  </div>
+</form>
+  </div>
+</div>
+            </div>
+          </div>
+
+
+<script type="text/javascript" src="{% static 'js/js.js' %}"></script>
+
+
+
+
+
+<!-- /.container -->
+
+<!-- jQuery -->
+
+
+
+
+
+</body>
+</html>
