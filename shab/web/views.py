@@ -15,6 +15,7 @@ import jdatetime
 from itertools import zip_longest
 from django.http import JsonResponse
 from json import JSONEncoder
+from django.contrib.sessions.models import Session
 
 
 @login_required
@@ -34,7 +35,6 @@ def index(request):
         a.append(a[0])
     it = iter(a);
     nested = [list(b) for b in zip_longest(it, it)]
-    print(nested)
     context['banners'] = nested
     return render(request, 'index.html', context)
 
@@ -112,6 +112,9 @@ def posts(request):
 def post(request , id) :
     post = Post.objects.get(id=id)
     context = {}
+    if not request.session.exists(request.session.session_key):
+        request.session.create()
+    sesssionkey = Session.objects.get(session_key = request.session.session_key)
     context['post'] = post
     tags = list(post.tags.all())
     comments = Comment.objects.filter(RelPost=post , Valid = True)
@@ -119,6 +122,11 @@ def post(request , id) :
     tags = str(tags[0]).split(',')
     print(tags[0])
     context['tags'] =tags
+    context['likesnumber'] = len(Like.objects.filter(RelPost = post))
+    if len(Like.objects.filter( RelPost=post , User=sesssionkey ) ) == 0 :
+        context['classattr'] = "far gray"
+    else :
+        context['classattr'] = "fa red"
     if post.Type == 'avatarbase' :
         return render(request, 'post.html', context)
     elif post.Type == 'thumbbase' :
@@ -175,3 +183,26 @@ def showcomments(request) :
     context = {}
     context['comments'] = cm
     return render(request, 'app/comments.html', context)
+
+
+@csrf_exempt
+def like(request):
+    if not request.session.exists(request.session.session_key):
+        request.session.create()
+    post = Post.objects.get(id=request.POST['postid'])
+    context = {}
+    sesssionkey = Session.objects.get(session_key = request.session.session_key)
+    likeobj = Like.objects.filter(RelPost=post, User=sesssionkey)
+    if len( likeobj) == 0 :
+        l = Like( RelPost=post , User=sesssionkey )
+        l.save()
+        context['response'] = '200'
+        context['message'] = 'لایک کردی'
+        context['count'] =  len(Like.objects.filter(RelPost=post))
+        return JsonResponse(context, encoder=JSONEncoder)
+    else :
+        Like.objects.filter(RelPost=post, User=sesssionkey).delete()
+        context['response'] = '200'
+        context['message'] = 'لایک کرده بودی قبلا'
+        context['count'] =  len(Like.objects.filter(RelPost=post))
+        return JsonResponse(context, encoder=JSONEncoder)

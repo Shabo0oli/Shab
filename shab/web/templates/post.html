@@ -36,8 +36,21 @@
   <script>
   $(document).ready(function(){
     $(".heart").click(function() {
-      $(this).toggleClass("far fa");
-      $(this).toggleClass("gray red");
+      var $this = $(this);
+      $.ajax({
+        url: '/like/',
+        cache: false,
+        type: 'POST',
+        data : { postid : '{{post.id}}'  },
+        success: function(json_obj) {
+        if (json_obj.response == '200') {
+            $this.toggleClass('far fa');
+            $this.toggleClass('gray red');
+            document.getElementById("likenumber").textContent = json_obj.count.toString()
+        }
+    }
+    });
+
     });
   });
 
@@ -110,7 +123,7 @@
                   <h6> {{post.Title}}  </h6>
                 </div>
                 <div class="col-3 mid">
-                  <span class="icon"><i class=" heart far fa-heart gray">۲۳</i></span>
+                  <span class="icon"><i id="likenumber" class=" heart {{classattr}} fa-heart ">{{likesnumber}}</i></span>
                   <span class="icon"><i class=" share fas fa-share-square gray"></i></span>
                 </div>
               </div>

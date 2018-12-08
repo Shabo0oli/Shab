@@ -32,3 +32,6 @@ admin.site.register(Comment, Commentdate)
 admin.site.register(Like)
 admin.site.register(Banner)
 
+from django.contrib.sessions.models import Session
+
+admin.site.register(Session)

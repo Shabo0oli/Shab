@@ -36,8 +36,21 @@
   <script>
   $(document).ready(function(){
     $(".heart").click(function() {
-      $(this).toggleClass("far fa");
-      $(this).toggleClass("gray red");
+      var $this = $(this);
+      $.ajax({
+        url: '/like/',
+        cache: false,
+        type: 'POST',
+        data : { postid : '{{post.id}}'  },
+        success: function(json_obj) {
+        if (json_obj.response == '200') {
+            $this.toggleClass('far fa');
+            $this.toggleClass('gray red');
+            document.getElementById("likenumber").textContent = json_obj.count.toString()
+        }
+    }
+    });
+
     });
   });
 
@@ -113,7 +126,7 @@
                       <div class="row col-12"><h6> {{post.Title}} </h6> </div>
                     </div>
                     <div class="col-2 mid">
-                      <span class="icon"><i class=" heart far fa-heart gray">۲۳</i></span>
+                  <span class="icon"><i id="likenumber" class=" heart {{classattr}} fa-heart ">{{likesnumber}}</i></span>
                       <span class="icon"><i class=" share fas fa-share-square gray"></i></span>
                     </div>
                   </div>
@@ -153,9 +166,9 @@
               <div class="card mycard" style="margin-top: 3% !important;" >
                 <div class="card-header text-center "> <h5> نظرات </h5> </div>
                  <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Cras justo odio</li>
-                   <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
+                  {% for cm in comments %}
+                  <li class="list-group-item"><b>{{cm.Author}} میگه : </b>  {{cm.Text}}</li>
+                   {% endfor %}
                           </ul>
 
   <div class="card-footer">

@@ -1,7 +1,7 @@
 from django.db import models
 from django_jalali.db import models as jmodels
 from taggit.managers import TaggableManager
-
+from django.contrib.sessions.models import Session
 
 
 
@@ -38,7 +38,8 @@ class Comment(models.Model):
 
 class Like(models.Model):
     RelPost = models.ForeignKey(Post,on_delete=models.CASCADE)
-    Author = models.CharField(max_length=50)
+    User = models.ForeignKey(Session, on_delete=models.SET_NULL , null=True)
+
 
 class Banner(models.Model) :
     PostLink = models.ForeignKey(Post , related_name='banner' ,  on_delete=models.CASCADE)

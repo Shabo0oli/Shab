@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^posts', views.posts, name='posts'),
     url(r'^banners', views.banners, name='banners'),
     url(r'^comment', views.comment, name='comment'),
+    url(r'^like', views.like, name='like'),
     url(r'^showcomments', views.showcomments, name='showcomments'),
     url(r'^post/([0-9]*)/$', views.post, name='post'),
     url(r'^logout/$', views.logout_view, name='logout'),
