@@ -213,3 +213,43 @@ def delpost(request , postid) :
     post = Post.objects.get(id = postid)
     post.delete()
     return posts(request)
+
+@login_required
+@csrf_exempt
+def editpost(request , postid) :
+    if request.POST :
+        post = Post.objects.get(id=request.POST['postid'])
+        title = request.POST['title']
+        subtitle = request.POST['subtitle']
+        if 'about' in request.POST:
+            post.About = request.POST['about']
+        if 'postimage' in request.FILES:
+            post.PostImage = request.FILES['postimage']
+        category = request.POST['category']
+        text = request.POST['text']
+        tags = request.POST['tags']
+        if 'avatar' in request.FILES:
+            post.Avatar = request.FILES['avatar']
+        for tag in post.tags.all():
+            post.tags.remove(tag)
+        post.tags.add(tags)
+        post.Title = title
+        post.SubTitle = subtitle
+        post.Category = category
+        post.Text = text
+        post.save()
+        context = {}
+        context['message'] = 'ویرایش با موفقیت انجام شد'
+        posts = Post.objects.all()
+        context['posts'] = posts
+        return render(request, 'app/tables_dynamic.html', context)
+
+
+
+
+    post = Post.objects.get(id = postid)
+    tags = post.tags.all()
+    context = {}
+    context['post'] = post
+    context['tags'] = list(tags)
+    return render(request, 'app/editpost.html', context)

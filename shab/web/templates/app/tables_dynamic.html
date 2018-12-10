@@ -58,6 +58,9 @@
             <div class="x_content">
               <p class="text-muted font-13 m-b-30">
               </p>
+              {% if message %}
+            <div class="alert alert-success" role="alert">{{message}}</div>
+            {% endif %}
               <table id="datatable" class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -80,7 +83,7 @@
                   <td> {{post.Category}} </td>
                   <td> {{post.Type}} </td>
                 <td> </td>
-                <td> <a href="/edit/{{post.id}}"> <i class="fa fa-edit"></i> </a> <a href="/delpost/{{post.id}}"> <i class="fa fa-remove"></i> </a> </td>
+                <td> <a href="/editpost/{{post.id}}"> <i class="fa fa-edit"></i> </a> <a href="/delpost/{{post.id}}"> <i class="fa fa-remove"></i> </a> </td>
                     </tr>
                 {% endfor %}
                 </tbody>
