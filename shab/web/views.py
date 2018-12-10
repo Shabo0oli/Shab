@@ -21,6 +21,8 @@ from django.contrib.sessions.models import Session
 @login_required
 def dashboard(request):
     context = {}
+    activeuser = len(Session.objects.all())
+    context['activeuser'] = activeuser
     return render(request, 'app/index4.html', context)
 
 def index(request):
