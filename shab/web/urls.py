@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^like', views.like, name='like'),
     url(r'^showcomments', views.showcomments, name='showcomments'),
     url(r'^post/([0-9]*)/$', views.post, name='post'),
+    url(r'^delpost/([0-9]*)/$', views.delpost, name='delpost'),
     url(r'^logout/$', views.logout_view, name='logout'),
 
 

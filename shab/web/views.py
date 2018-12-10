@@ -206,3 +206,10 @@ def like(request):
         context['message'] = 'لایک کرده بودی قبلا'
         context['count'] =  len(Like.objects.filter(RelPost=post))
         return JsonResponse(context, encoder=JSONEncoder)
+
+
+@login_required
+def delpost(request , postid) :
+    post = Post.objects.get(id = postid)
+    post.delete()
+    return posts(request)
