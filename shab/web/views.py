@@ -235,10 +235,11 @@ def editpost(request , postid) :
         for tag in post.tags.all():
             post.tags.remove(tag)
 
-        tags = tags.split(',')
-        print(tags)
-        for tag in tags :
-            post.tags.add(tag)
+        if tags != "" :
+            tags = tags.split(',')
+            print(tags)
+            for tag in tags :
+                post.tags.add(tag)
         post.Title = title
         post.SubTitle = subtitle
         post.Category = category
