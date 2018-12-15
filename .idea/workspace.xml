@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d9d0f9f-f111-482a-bbad-70fdac106ec8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/templates/post2.html" afterPath="$PROJECT_DIR$/shab/web/templates/post2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/urls.py" afterPath="$PROJECT_DIR$/shab/web/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/views.py" afterPath="$PROJECT_DIR$/shab/web/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/templates/app/editpost.html" afterPath="$PROJECT_DIR$/shab/web/templates/app/editpost.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,16 +50,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shab/web/templates/template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="post.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shab/web/templates/post.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -102,7 +90,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shab/web/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
@@ -110,6 +98,16 @@
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editpost.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/shab/web/templates/app/editpost.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="328" column="131" lean-forward="false" selection-start-line="328" selection-start-column="123" selection-end-line="328" selection-end-column="131" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -146,8 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Text|safe</find>
-      <find>|safe|slice:&quot;:130&quot;</find>
       <find>|safe|slice</find>
       <find>|safe|slice:&quot;:250&quot;</find>
       <find>ava</find>
@@ -176,6 +172,8 @@
       <find>chart_plot_01</find>
       <find>print</find>
       <find>editpo</find>
+      <find>req</find>
+      <find>required</find>
     </findStrings>
     <replaceStrings>
       <replace>item</replace>
@@ -216,12 +214,12 @@
         <option value="$PROJECT_DIR$/shab/web/templates/post23.html" />
         <option value="$PROJECT_DIR$/shab/web/templates/post.html" />
         <option value="$PROJECT_DIR$/shab/web/templates/app/tables_dynamic.html" />
-        <option value="$PROJECT_DIR$/shab/web/templates/app/editpost.html" />
         <option value="$PROJECT_DIR$/shab/web/templates/app/index4.html" />
         <option value="$PROJECT_DIR$/shab/web/templates/index.html" />
         <option value="$PROJECT_DIR$/shab/web/templates/post2.html" />
         <option value="$PROJECT_DIR$/shab/web/urls.py" />
         <option value="$PROJECT_DIR$/shab/web/views.py" />
+        <option value="$PROJECT_DIR$/shab/web/templates/app/editpost.html" />
       </list>
     </option>
   </component>
@@ -322,6 +320,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Shab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Shab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -783,13 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/templates/app/editpost.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="293" column="48" lean-forward="false" selection-start-line="293" selection-start-column="37" selection-end-line="293" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shab/web/templates/app/sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -1085,6 +1102,14 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/templates/app/editpost.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="328" column="131" lean-forward="false" selection-start-line="328" selection-start-column="123" selection-end-line="328" selection-end-column="131" />
+          <folding />
         </state>
       </provider>
     </entry>
