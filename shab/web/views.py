@@ -97,7 +97,9 @@ def newpost(request) :
                     Date=currentDate, About=about,
                     PostImage=postimage)
         post.save()
-        post.tags.add(tags)
+        tags = tags.split(',')
+        for tag in tags:
+            post.tags.add(tag)
         post.save()
         return render(request, 'app/form.html', context)
     else :
@@ -118,11 +120,9 @@ def post(request , id) :
         request.session.create()
     sesssionkey = Session.objects.get(session_key = request.session.session_key)
     context['post'] = post
-    tags = list(post.tags.all())
+    tags = post.tags.all()
     comments = Comment.objects.filter(RelPost=post , Valid = True)
     context['comments'] = comments
-    tags = str(tags[0]).split(',')
-    print(tags[0])
     context['tags'] =tags
     context['likesnumber'] = len(Like.objects.filter(RelPost = post))
     if len(Like.objects.filter( RelPost=post , User=sesssionkey ) ) == 0 :
@@ -234,7 +234,11 @@ def editpost(request , postid) :
             post.Avatar = request.FILES['avatar']
         for tag in post.tags.all():
             post.tags.remove(tag)
-        post.tags.add(tags)
+
+        tags = tags.split(',')
+        print(tags)
+        for tag in tags :
+            post.tags.add(tag)
         post.Title = title
         post.SubTitle = subtitle
         post.Category = category
@@ -255,3 +259,21 @@ def editpost(request , postid) :
     context['post'] = post
     context['tags'] = list(tags)
     return render(request, 'app/editpost.html', context)
+
+@csrf_exempt
+def tag(request , tag) :
+    tags = []
+    tags.append(tag)
+    posts = Post.objects.filter(tags__name__in=list(tags))
+    context = {}
+    context['posts'] = posts
+    banners = Post.objects.filter(id__in=Banner.objects.values('PostLink'))
+    a = []
+    for b in banners:
+        a.append(b)
+    if len(a) % 2:
+        a.append(a[0])
+    it = iter(a);
+    nested = [list(b) for b in zip_longest(it, it)]
+    context['banners'] = nested
+    return render(request, 'index.html', context)
