@@ -97,9 +97,10 @@ def newpost(request) :
                     Date=currentDate, About=about,
                     PostImage=postimage)
         post.save()
-        tags = tags.split(',')
-        for tag in tags:
-            post.tags.add(tag)
+        if tags != "":
+            tags = tags.split(',')
+            for tag in tags:
+                post.tags.add(tag)
         post.save()
         return render(request, 'app/form.html', context)
     else :
