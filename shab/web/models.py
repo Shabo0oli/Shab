@@ -44,6 +44,3 @@ class Like(models.Model):
 class Banner(models.Model) :
     PostLink = models.ForeignKey(Post , related_name='banner' ,  on_delete=models.CASCADE)
 
-class RelatedPost(models.Model):
-    MainPost = models.ForeignKey(Post , related_name='main' ,  on_delete=models.CASCADE)
-    related = models.ForeignKey(Post, related_name='related' , on_delete=models.CASCADE)
