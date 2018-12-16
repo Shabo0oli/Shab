@@ -304,8 +304,10 @@ def related(request , mainid):
         newrel.save()
     relatedposts = RelatedPost.objects.filter(MainPost_id = mainid)
     anotherpost = Post.objects.all()
+    mainpost = Post.objects.get(id = mainid)
     context ={}
     context['relatedposts'] = relatedposts
+    context['mainpost'] = mainpost
     context['posts'] = anotherpost
     return render(request, 'app/related.html', context)
 
