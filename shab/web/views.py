@@ -27,7 +27,7 @@ def dashboard(request):
 
 def index(request):
     context = {}
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-Date')
     context['posts'] = posts
     banners = Post.objects.filter(id__in=Banner.objects.values('PostLink'))
     a = []

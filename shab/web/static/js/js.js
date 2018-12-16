@@ -28,3 +28,4 @@ $('#form-comment').on('submit',function (e) {
     }
     });
 });
+
