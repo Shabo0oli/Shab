@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import url
 from . import views
+import django.views.defaults
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
@@ -10,6 +11,7 @@ urlpatterns = [
     url(r'^newpost', views.newpost, name='newpost'),
     url(r'^posts', views.posts, name='posts'),
     url(r'^banners', views.banners, name='banners'),
+    url(r'^related/([0-9]*)/$', views.related, name='related'),
     url(r'^comment', views.comment, name='comment'),
     url(r'^like', views.like, name='like'),
     url(r'^showcomments', views.showcomments, name='showcomments'),
@@ -18,6 +20,7 @@ urlpatterns = [
     url(r'^delpost/([0-9]*)/$', views.delpost, name='delpost'),
     url(r'^editpost/([0-9]*)/$', views.editpost, name='editpost'),
     url(r'^logout/$', views.logout_view, name='logout'),
+    url(r'^.*/$', views.notfount, name='notfount'),
 
 
 ]

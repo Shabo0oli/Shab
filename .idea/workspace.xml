@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8d9d0f9f-f111-482a-bbad-70fdac106ec8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/static/css/style.css" afterPath="$PROJECT_DIR$/shab/web/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/static/js/js.js" afterPath="$PROJECT_DIR$/shab/web/static/js/js.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/templates/app/form.html" afterPath="$PROJECT_DIR$/shab/web/templates/app/form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/templates/index.html" afterPath="$PROJECT_DIR$/shab/web/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/admin.py" afterPath="$PROJECT_DIR$/shab/web/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/models.py" afterPath="$PROJECT_DIR$/shab/web/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/templates/app/tables_dynamic.html" afterPath="$PROJECT_DIR$/shab/web/templates/app/tables_dynamic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/templates/post.html" afterPath="$PROJECT_DIR$/shab/web/templates/post.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/templates/post2.html" afterPath="$PROJECT_DIR$/shab/web/templates/post2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/templates/post23.html" afterPath="$PROJECT_DIR$/shab/web/templates/post23.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/urls.py" afterPath="$PROJECT_DIR$/shab/web/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/views.py" afterPath="$PROJECT_DIR$/shab/web/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,8 +37,8 @@
       <file leaf-file-name="post2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shab/web/templates/post2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="203" column="0" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+            <state relative-caret-position="-97">
+              <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,9 +47,11 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shab/web/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="374">
+              <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+              <folding>
+                <element signature="e#24#56#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,18 +59,18 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shab/web/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="8" />
+            <state relative-caret-position="503">
+              <caret line="48" column="11" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shab/web/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+            <state relative-caret-position="442">
+              <caret line="311" column="23" lean-forward="true" selection-start-line="311" selection-start-column="23" selection-end-line="311" selection-end-column="23" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -73,45 +78,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/shab/web/static/css/style.css">
+      <file leaf-file-name="tables_dynamic.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shab/web/templates/app/tables_dynamic.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+            <state relative-caret-position="370">
+              <caret line="85" column="73" lean-forward="false" selection-start-line="85" selection-start-column="73" selection-end-line="85" selection-end-column="73" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="js.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shab/web/static/js/js.js">
+      <file leaf-file-name="banners.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shab/web/templates/app/banners.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="597">
+              <caret line="115" column="43" lean-forward="false" selection-start-line="115" selection-start-column="34" selection-end-line="115" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shab/web/templates/app/form.html">
+      <file leaf-file-name="related.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shab/web/templates/app/related.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="280" column="49" lean-forward="false" selection-start-line="280" selection-start-column="49" selection-end-line="280" selection-end-column="49" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <marker date="1544922577627" expanded="false" signature="16944:17004" ph="..." />
-              </folding>
+            <state relative-caret-position="1870">
+              <caret line="110" column="58" lean-forward="false" selection-start-line="110" selection-start-column="58" selection-end-line="110" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editpost.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shab/web/templates/app/editpost.html">
+      <file leaf-file-name="post.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shab/web/templates/post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="328" column="131" lean-forward="false" selection-start-line="328" selection-start-column="123" selection-end-line="328" selection-end-column="131" />
+            <state relative-caret-position="418">
+              <caret line="153" column="20" lean-forward="true" selection-start-line="153" selection-start-column="20" selection-end-line="153" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -120,8 +121,8 @@
       <file leaf-file-name="post23.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shab/web/templates/post23.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-849">
-              <caret line="134" column="95" lean-forward="false" selection-start-line="134" selection-start-column="95" selection-end-line="134" selection-end-column="95" />
+            <state relative-caret-position="544">
+              <caret line="163" column="16" lean-forward="false" selection-start-line="163" selection-start-column="16" selection-end-line="163" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -130,9 +131,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shab/web/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="286">
+              <caret line="236" column="30" lean-forward="false" selection-start-line="236" selection-start-column="26" selection-end-line="236" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -149,8 +152,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>|safe|slice:&quot;:250&quot;</find>
-      <find>ava</find>
       <find>med</find>
       <find>safe</find>
       <find>&quot;|safe</find>
@@ -179,6 +180,8 @@
       <find>req</find>
       <find>required</find>
       <find>پادساعات</find>
+      <find>RelatedPost</find>
+      <find>Like.</find>
     </findStrings>
     <replaceStrings>
       <replace>item</replace>
@@ -210,22 +213,23 @@
         <option value="$PROJECT_DIR$/shab/web/templates/app/banners.html" />
         <option value="$PROJECT_DIR$/shab/web/templates/app/sidebar.html" />
         <option value="$PROJECT_DIR$/shab/web/templates/app/comments.html" />
-        <option value="$PROJECT_DIR$/shab/web/admin.py" />
         <option value="$PROJECT_DIR$/shab/shab/settings.py" />
-        <option value="$PROJECT_DIR$/shab/web/models.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/shab/web/templates/post23.html" />
-        <option value="$PROJECT_DIR$/shab/web/templates/post.html" />
-        <option value="$PROJECT_DIR$/shab/web/templates/app/tables_dynamic.html" />
         <option value="$PROJECT_DIR$/shab/web/templates/app/index4.html" />
-        <option value="$PROJECT_DIR$/shab/web/templates/post2.html" />
-        <option value="$PROJECT_DIR$/shab/web/urls.py" />
         <option value="$PROJECT_DIR$/shab/web/templates/app/editpost.html" />
         <option value="$PROJECT_DIR$/shab/web/templates/app/form.html" />
-        <option value="$PROJECT_DIR$/shab/web/views.py" />
         <option value="$PROJECT_DIR$/shab/web/static/js/js.js" />
-        <option value="$PROJECT_DIR$/shab/web/templates/index.html" />
         <option value="$PROJECT_DIR$/shab/web/static/css/style.css" />
+        <option value="$PROJECT_DIR$/shab/web/templates/index.html" />
+        <option value="$PROJECT_DIR$/shab/web/models.py" />
+        <option value="$PROJECT_DIR$/shab/web/admin.py" />
+        <option value="$PROJECT_DIR$/shab/web/templates/post2.html" />
+        <option value="$PROJECT_DIR$/shab/web/templates/app/tables_dynamic.html" />
+        <option value="$PROJECT_DIR$/shab/web/templates/app/related.html" />
+        <option value="$PROJECT_DIR$/shab/web/templates/post.html" />
+        <option value="$PROJECT_DIR$/shab/web/templates/post23.html" />
+        <option value="$PROJECT_DIR$/shab/web/urls.py" />
+        <option value="$PROJECT_DIR$/shab/web/views.py" />
       </list>
     </option>
   </component>
@@ -431,8 +435,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -446,12 +450,12 @@
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/shab/web" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/shab/web/templates/app" />
       <recent name="$PROJECT_DIR$/shab/web/templates" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/shab/web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -720,7 +724,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28540772" sideWeight="0.49518073" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28898427" sideWeight="0.49518073" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -754,13 +758,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/shab/web/static/vendors/jquery.tagsinput/src/jquery.tagsinput.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shab/web/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -789,20 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/templates/app/banners.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="115" column="43" lean-forward="false" selection-start-line="115" selection-start-column="34" selection-end-line="115" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shab/shab/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="503">
@@ -814,13 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1734">
           <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/templates/app/tables_dynamic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="62" column="23" lean-forward="false" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -961,7 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,11 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17595">
           <caret line="1043" column="23" lean-forward="false" selection-start-line="1043" selection-start-column="23" selection-end-line="1043" selection-end-column="23" />
-          <folding>
-            <marker date="1539539744000" expanded="true" signature="67896:67913" ph="..." />
-            <marker date="1539539744000" expanded="true" signature="87943:87960" ph="..." />
-            <marker date="1539539744000" expanded="true" signature="164187:164204" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -989,7 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -997,7 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="45" column="29" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1005,7 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,7 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1021,10 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,7 +1001,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1048,49 +1008,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="2565" column="25" lean-forward="false" selection-start-line="2565" selection-start-column="25" selection-end-line="2565" selection-end-column="25" />
-          <folding>
-            <marker date="1544072750207" expanded="true" signature="31787:31819" ph="..." />
-            <marker date="1544072750207" expanded="true" signature="33347:33354" ph="×" />
-            <marker date="1544072750207" expanded="true" signature="55734:55746" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/templates/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="187" column="4" lean-forward="false" selection-start-line="187" selection-start-column="4" selection-end-line="189" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/templates/post23.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-849">
-          <caret line="134" column="95" lean-forward="false" selection-start-line="134" selection-start-column="95" selection-end-line="134" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/templates/post2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="203" column="0" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shab/web/templates/app/editpost.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="5576">
           <caret line="328" column="131" lean-forward="false" selection-start-line="328" selection-start-column="123" selection-end-line="328" selection-end-column="131" />
           <folding />
         </state>
@@ -1098,39 +1021,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shab/web/templates/app/form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
+        <state relative-caret-position="4760">
           <caret line="280" column="49" lean-forward="false" selection-start-line="280" selection-start-column="49" selection-end-line="280" selection-end-column="49" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <marker date="1544922577627" expanded="false" signature="16944:17004" ph="..." />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,8 +1041,102 @@
     <entry file="file://$PROJECT_DIR$/shab/web/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="503">
-          <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="236" column="30" lean-forward="false" selection-start-line="236" selection-start-column="26" selection-end-line="236" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/templates/app/banners.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="115" column="43" lean-forward="false" selection-start-line="115" selection-start-column="34" selection-end-line="115" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/templates/app/tables_dynamic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="85" column="73" lean-forward="false" selection-start-line="85" selection-start-column="73" selection-end-line="85" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="48" column="11" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/templates/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="153" column="20" lean-forward="true" selection-start-line="153" selection-start-column="20" selection-end-line="153" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/templates/post2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-97">
+          <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/templates/post23.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="163" column="16" lean-forward="false" selection-start-line="163" selection-start-column="16" selection-end-line="163" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/templates/app/related.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1870">
+          <caret line="110" column="58" lean-forward="false" selection-start-line="110" selection-start-column="58" selection-end-line="110" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+          <folding>
+            <element signature="e#24#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="311" column="23" lean-forward="true" selection-start-line="311" selection-start-column="23" selection-end-line="311" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

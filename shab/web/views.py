@@ -16,6 +16,8 @@ from itertools import zip_longest
 from django.http import JsonResponse
 from json import JSONEncoder
 from django.contrib.sessions.models import Session
+from django.http import Http404,HttpResponseNotFound
+
 
 
 @login_required
@@ -115,7 +117,10 @@ def posts(request):
 
 
 def post(request , id) :
-    post = Post.objects.get(id=id)
+    try:
+        post = Post.objects.get(id=id)
+    except Post.DoesNotExist:
+        return HttpResponseNotFound('<h1>Page not found</h1>')
     context = {}
     if not request.session.exists(request.session.session_key):
         request.session.create()
@@ -124,6 +129,7 @@ def post(request , id) :
     tags = post.tags.all()
     comments = Comment.objects.filter(RelPost=post , Valid = True)
     context['comments'] = comments
+    context['relatedposts'] = RelatedPost.objects.filter(MainPost__id =id )
     context['tags'] =tags
     context['likesnumber'] = len(Like.objects.filter(RelPost = post))
     if len(Like.objects.filter( RelPost=post , User=sesssionkey ) ) == 0 :
@@ -279,3 +285,29 @@ def tag(request , tag) :
     nested = [list(b) for b in zip_longest(it, it)]
     context['banners'] = nested
     return render(request, 'index.html', context)
+
+
+
+
+@csrf_exempt
+@login_required
+def related(request , mainid):
+    if 'delid' in request.POST :
+        delid = request.POST['delid']
+        relpost = RelatedPost.objects.get(id = delid)
+        relpost.delete()
+    if 'newrelated' in request.POST :
+        newrelated = request.POST['newrelated']
+        mainpost = Post.objects.get(id=mainid)
+        relpost = Post.objects.get(id=newrelated)
+        newrel = RelatedPost(MainPost=mainpost , related=relpost)
+        newrel.save()
+    relatedposts = RelatedPost.objects.filter(MainPost_id = mainid)
+    anotherpost = Post.objects.all()
+    context ={}
+    context['relatedposts'] = relatedposts
+    context['posts'] = anotherpost
+    return render(request, 'app/related.html', context)
+
+def notfount(request) :
+    return HttpResponseNotFound('<h1>Page not found</h1>')

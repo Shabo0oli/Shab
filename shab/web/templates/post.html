@@ -138,12 +138,37 @@
 
               </div>
           </div>
+
+           <div class="card-footer text-center">
+            <div class=""> <h5> مطالب مرتبط </h5> </div>
+            <div class="row">
+              {% for relpost in relatedposts %}
+              <div class="col-4">
+                <div class="card mycard zoom" onclick="location.href='/post/{{relpost.related.id}}';">
+                  <div class="card-body">
+
+                     <div class="card-text text-center"> <h8>{{relpost.related.Title}} </h8> </div>
+
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+
+
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-2">
       </div>
     </div>
   </div>
+
+
+
+
+
+
         <div class="row">
             <div class="col-2">
 
