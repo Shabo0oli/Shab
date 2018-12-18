@@ -1,4 +1,5 @@
 {% extends "template.html"%}
+{% load mytags %}
 {% load staticfiles %}
 
 {% block content %}
@@ -72,7 +73,7 @@
             <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b1.About|safe}}  </p> </div>
             <div class="row col-12"><h6> {{ b1.Title|safe }}  </h6> </div>
           </div>
-          <div class="divintro"><p class="card-text"> {{b1.Text|striptags|slice:":130"}}</span></span></p></div>
+          <div class="divintro"><p class="card-text"> {{b1.Text|mystrip|safe|slice:":130"}}</p></div>
         </div>
 
       </div>
@@ -94,7 +95,7 @@
             <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b1.About|safe}}  </p> </div>
             <div class="row col-12"><h6> {{ b1.Title|safe }}  </h6> </div>
           </div>
-          <div class="divintro"><p class="card-text"> {{b1.Text|striptags|slice:":250"}}</span></span></p></div>
+          <div class="divintro"><p class="card-text"> {{b1.Text|mystrip|safe|slice:":250"}}</p></div>
         </div>
 
       </div>
@@ -121,7 +122,7 @@
             </div>
           </div>
           <div class="col-6 mid">
-            <div class="divintro"><p class="card-text">{{b1.Text|striptags|slice:":130"}}</span></span></p></div>
+            <div class="divintro"><p class="card-text">{{b1.Text|mystrip|safe|slice:":130"}}</p></div>
           </div>
         </div>
       </div>
@@ -153,7 +154,7 @@
             <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b2.About|safe}}  </p> </div>
             <div class="row col-12"><h6> {{ b2.Title|safe }}  </h6> </div>
           </div>
-          <div class="divintro"><p class="card-text"> {{b2.Text|striptags|slice:":130"}}</span></span></p></div>
+          <div class="divintro"><p class="card-text"> {{b2.Text|mystrip|safe|slice:":130"}}</p></div>
         </div>
 
       </div>
@@ -175,7 +176,7 @@
             <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b2.About|safe}}  </p> </div>
             <div class="row col-12"><h6> {{ b2.Title|safe }}  </h6> </div>
           </div>
-          <div class="divintro"><p class="card-text"> {{b2.Text|striptags|slice:":250"}}</span></span></p></div>
+          <div class="divintro"><p class="card-text"> {{b2.Text|mystrip|safe|slice:":250"}}</p></div>
         </div>
 
       </div>
@@ -202,7 +203,7 @@
             </div>
           </div>
           <div class="col-6 mid">
-            <div class="divintro"><p class="card-text">{{b2.Text|striptags|slice:":130"}}</span></span></p></div>
+            <div class="divintro"><p class="card-text">{{b2.Text|mystrip|safe|slice:":130"}}</p></div>
           </div>
         </div>
       </div>
@@ -258,7 +259,7 @@
       <div class="row">
         <div class="divintro"><span class="intro">{{post.SubTitle}}</span></div>
       </div>
-      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|striptags|slice:":300"}}</span></span></p></div>
+      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|mystrip|safe|slice:":300"}}</p></div>
       </div>
     </div>
   </div>
@@ -287,7 +288,7 @@
           </div>
         </div>
       </div>
-      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|striptags|slice:":300"}}</span></span></p></div>
+      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|mystrip|safe|slice:":300"}}</p></div>
       </div>
     </div>
   </div>
@@ -316,7 +317,7 @@
           </div>
         </div>
       </div>
-      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|striptags|slice:":300"}}</span></span></p></div>
+      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|mystrip|safe|slice:":300"}}</p></div>
       </div>
     </div>
   </div>
