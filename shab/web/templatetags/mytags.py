@@ -8,6 +8,9 @@ def mystrip(value):
     skip = 0
     i = 0
     while i < len(value):
+        if value[i:i+11] == '<p><br></p>':
+            i = i+11
+            continue
         if value[i:i+4] == '<br>':
             i = i+4
             res += '<br/>'
@@ -39,5 +42,4 @@ def mystrip(value):
             i = i+1
             continue
         i += 1
-    print(res)
     return res

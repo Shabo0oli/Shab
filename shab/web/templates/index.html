@@ -64,7 +64,7 @@
   {% if b1.Type == 'bigimage'%}
 
   <div class="col-6 sldr" >
-    <div class="card mycard shadow zoom" onclick="location.href='/post/{{b1.id}}';">
+    <div class="card mycard shadow zoom box" onclick="location.href='/post/{{b1.id}}';">
       <div class="card-body row">
         <div class="card-title col-6 fill"  style="background-image: url('/media/{{b1.PostImage}}'); border-radius:3%;" >
         </div>
@@ -73,7 +73,7 @@
             <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b1.About|safe}}  </p> </div>
             <div class="row col-12"><h6> {{ b1.Title|safe }}  </h6> </div>
           </div>
-          <div class="divintro"><p class="card-text"> {{b1.Text|mystrip|safe|slice:":130"}}</p></div>
+          <div class="divintro"><p class="card-text"> {{b1.Text|safe|mystrip|safe|slice:":130"}}</p></div>
         </div>
 
       </div>
@@ -86,7 +86,7 @@
   {% if b1.Type == 'thumbbase'%}
 
   <div class="col-6 sldr" >
-    <div class="card mycard shadow zoom" onclick="location.href='/post/{{b1.id}}';">
+    <div class="card mycard shadow zoom box" onclick="location.href='/post/{{b1.id}}';">
       <div class="card-body row">
         <div class="card-title col-6 fill"  style="background-image: url('/media/{{b1.PostImage}}'); border-radius:3%;" >
         </div>
@@ -95,7 +95,7 @@
             <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b1.About|safe}}  </p> </div>
             <div class="row col-12"><h6> {{ b1.Title|safe }}  </h6> </div>
           </div>
-          <div class="divintro"><p class="card-text"> {{b1.Text|mystrip|safe|slice:":250"}}</p></div>
+          <div class="divintro"><p class="card-text"> {{b1.Text|safe|mystrip|safe|slice:":250"}}</p></div>
         </div>
 
       </div>
@@ -109,7 +109,7 @@
   {% if b1.Type == 'avatarbase' %}
 
   <div class="col-6 sldr">
-    <div class="card mycard shadow zoom" onclick="location.href='/post/{{b1.id}}';">
+    <div class="card mycard shadow zoom box" onclick="location.href='/post/{{b1.id}}';">
       <div class="card-body">
         <div class="row mid">
           <div class="col-6">
@@ -122,7 +122,7 @@
             </div>
           </div>
           <div class="col-6 mid">
-            <div class="divintro"><p class="card-text">{{b1.Text|mystrip|safe|slice:":130"}}</p></div>
+            <div class="divintro"><p class="card-text">{{b1.Text|safe|mystrip|safe|slice:":130"}}</p></div>
           </div>
         </div>
       </div>
@@ -145,7 +145,7 @@
             {% if b2.Type == 'bigimage'%}
 
   <div class="col-6 sldr" >
-    <div class="card mycard shadow zoom" onclick="location.href='/post/{{b2.id}}';">
+    <div class="card mycard shadow zoom box" onclick="location.href='/post/{{b2.id}}';">
       <div class="card-body row">
         <div class="card-title col-6 fill"  style="background-image: url('/media/{{b2.PostImage}}'); border-radius:3%;" >
         </div>
@@ -154,7 +154,7 @@
             <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b2.About|safe}}  </p> </div>
             <div class="row col-12"><h6> {{ b2.Title|safe }}  </h6> </div>
           </div>
-          <div class="divintro"><p class="card-text"> {{b2.Text|mystrip|safe|slice:":130"}}</p></div>
+          <div class="divintro"><p class="card-text"> {{b2.Text|safe|mystrip|safe|slice:":130"}}</p></div>
         </div>
 
       </div>
@@ -167,7 +167,7 @@
   {% if b2.Type == 'thumbbase'%}
 
   <div class="col-6 sldr" >
-    <div class="card mycard shadow zoom" onclick="location.href='/post/{{b2.id}}';">
+    <div class="card mycard shadow zoom box" onclick="location.href='/post/{{b2.id}}';">
       <div class="card-body row">
         <div class="card-title col-6 fill"  style="background-image: url('/media/{{b2.PostImage}}'); border-radius:3%;" >
         </div>
@@ -176,7 +176,7 @@
             <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b2.About|safe}}  </p> </div>
             <div class="row col-12"><h6> {{ b2.Title|safe }}  </h6> </div>
           </div>
-          <div class="divintro"><p class="card-text"> {{b2.Text|mystrip|safe|slice:":250"}}</p></div>
+          <div class="divintro"><p class="card-text"> {{b2.Text|safe|mystrip|safe|slice:":250"}}</p></div>
         </div>
 
       </div>
@@ -190,7 +190,7 @@
   {% if b2.Type == 'avatarbase' %}
 
   <div class="col-6 sldr " >
-    <div class="card mycard shadow zoom" onclick="location.href='/post/{{b2.id}}';">
+    <div class="card mycard shadow zoom box" onclick="location.href='/post/{{b2.id}}';">
       <div class="card-body">
         <div class="row mid">
           <div class="col-6">
@@ -203,7 +203,7 @@
             </div>
           </div>
           <div class="col-6 mid">
-            <div class="divintro"><p class="card-text">{{b2.Text|mystrip|safe|slice:":130"}}</p></div>
+            <div class="divintro"><p class="card-text">{{b2.Text|safe|mystrip|safe|slice:":130"}}</p></div>
           </div>
         </div>
       </div>
@@ -259,7 +259,7 @@
       <div class="row">
         <div class="divintro"><span class="intro">{{post.SubTitle}}</span></div>
       </div>
-      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|mystrip|safe|slice:":300"}}</p></div>
+      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|safe|mystrip|safe|slice:":300"}}</p></div>
       </div>
     </div>
   </div>
@@ -288,7 +288,7 @@
           </div>
         </div>
       </div>
-      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|mystrip|safe|slice:":300"}}</p></div>
+      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|safe|mystrip|safe|slice:":300"}}</p></div>
       </div>
     </div>
   </div>
@@ -317,7 +317,7 @@
           </div>
         </div>
       </div>
-      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|mystrip|safe|slice:":300"}}</p></div>
+      <div class="row"> <div class="divintro"><p class="card-text">{{post.Text|safe|mystrip|safe|slice:":300"}}</p></div>
       </div>
     </div>
   </div>
