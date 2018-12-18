@@ -42,14 +42,16 @@
 
     $('.box').matchHeight();
 
+    $('#carouselExampleIndicators').bind('slide.bs.carousel', function (e) {
+    $('.box').matchHeight();
+});
+
 
 
 
   });
 
-  $('#carouselExampleIndicators').bind('slide.bs.carousel', function (e) {
-    $('.box').matchHeight();
-});
+
 
 
 
