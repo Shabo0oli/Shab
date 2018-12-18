@@ -1,5 +1,6 @@
 //Allows bootstrap carousels to display 3 items per page rather than just one
 $('.carousel.carousel-multi .item').each(function () {
+
 	var next = $(this).next();
 	if (!next.length) {
 		next = $(this).siblings(':first');
@@ -12,6 +13,7 @@ $('.carousel.carousel-multi .item').each(function () {
 	else {
 		$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
 	}
+	$('.box').matchHeight();
 });
 
 
