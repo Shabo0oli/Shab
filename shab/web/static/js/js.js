@@ -31,3 +31,14 @@ $('#form-comment').on('submit',function (e) {
     });
 });
 
+
+
+$('#carouselExampleIndicators').bind('slide.bs.carousel', function (e) {
+    $('.box').matchHeight();
+});
+
+    $("#carouselExampleIndicators").on("slid", function(){
+    // do something
+        $('.box').matchHeight();
+});
+
