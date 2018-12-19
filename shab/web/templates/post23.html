@@ -114,6 +114,37 @@
     </div>
     <div class="col-8">
       <div class="card mycard">
+          <div class="card-header">
+                {% if post.Category == 'LM' %}
+                لذت متن
+                {% endif %}
+                {% if post.Category == 'article' %}
+سرمقاله
+                {% endif %}
+                {% if post.Category == 'LN' %}
+               لذت نقد
+                {% endif %}
+                {% if post.Category == 'PZ' %}
+               پژوهش
+                {% endif %}
+                {% if post.Category == 'GG' %}
+                گفتگو
+                {% endif %}
+                {% if post.Category == 'LK' %}
+               لذت کشف
+                {% endif %}
+                {% if post.Category == 'RS' %}
+                به روایت شما
+                {% endif %}
+
+                                {% if post.Category == 'chel' %}
+چهل سالگی
+                {% endif %}
+
+                                {% if post.Category == 'PW' %}
+               پادساعت
+                {% endif %}
+            </div>
         <div class="card-body">
           <div class="card-title">
             <div class="row">
@@ -146,22 +177,26 @@
  {% if relatedposts %}
  <div class="card-footer text-center">
             <div class=""> <h5> مطالب مرتبط </h5> </div>
-            <div class="row">
+                   <div class="row">
+
               {% for relpost in relatedposts %}
               <div class="col-4">
                 <div class="card mycard zoom" onclick="location.href='/post/{{relpost.related.id}}';">
+                  <div class="card-header">
+                        <div class="card-text"> <h8>{{relpost.related.Title}} </h8> </div>
+                    </div>
                   <div class="card-body">
-
-                     <div class="card-text text-center"> <h8>{{relpost.related.Title}} </h8> </div>
-
+                      <div class="row">
+                          <div class="col-6"> <img class="img-fluid" src="/media/{{post.PostImage}}" style="border-radius: 5%;" ></div>
+                          <div class="col-6">{{relpost.related.SubTitle}}</div>
+                      </div>
                   </div>
                 </div>
               </div>
               {% endfor %}
-
+                   </div>
 
             </div>
-          </div>
         {% endif %}
 
 
@@ -195,7 +230,7 @@
                 <div class="card-header text-center "> <h5> نظرات </h5> </div>
                  <ul class="list-group list-group-flush">
                   {% for cm in comments %}
-                  <li class="list-group-item"><b>{{cm.Author}} میگه : </b>  {{cm.Text}}</li>
+                  <li class="list-group-item"><b>{{cm.Author}}  : </b>  {{cm.Text}}</li>
                    {% endfor %}
                           </ul>
 
