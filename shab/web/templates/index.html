@@ -51,6 +51,78 @@
 
 
 <div class="row" style="background-color:rgb(149,53,102);">
+ <div class="owl-carousel owl-theme ">
+   {% for b1  in banners2 %}
+  {% if b1.Type == 'bigimage'%}
+
+    <div class="card mycard shadow zoom  mybanner {{b1.Category}}" onclick="location.href='/post/{{b1.id}}';">
+      <div class="card-body row">
+        <div class="card-title col-6 fill"  style="background-image: url('/media/{{b1.PostImage}}'); border-radius:3%;" >
+        </div>
+        <div class="col-6">
+          <div class="row" style="padding:5%;">
+            <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b1.About|safe}}  </p> </div>
+            <div class="row col-12"><h6> {{ b1.Title|safe }}  </h6> </div>
+          </div>
+          <div class="divintro"><p class="card-text"> {{b1.Text|safe|mystrip|safe|slice:":130"}}</p></div>
+        </div>
+
+      </div>
+    </div>
+
+  {% endif %}
+
+
+  {% if b1.Type == 'thumbbase'%}
+
+    <div class="card mycard shadow zoom  mybanner {{b1.Category}}" onclick="location.href='/post/{{b1.id}}';">
+      <div class="card-body row">
+        <div class="card-title col-6 fill"  style="background-image: url('/media/{{b1.PostImage}}'); border-radius:3%;" >
+        </div>
+        <div class="col-6">
+          <div class="row" style="padding:5%;">
+            <div class="row col-12"><p style="color:gray ; font-size:0.7rem"> {{b1.About|safe}}  </p> </div>
+            <div class="row col-12"><h6> {{ b1.Title|safe }}  </h6> </div>
+          </div>
+          <div class="divintro"><p class="card-text"> {{b1.Text|safe|mystrip|safe|slice:":250"}}</p></div>
+        </div>
+
+      </div>
+    </div>
+
+
+  {% endif %}
+
+
+
+  {% if b1.Type == 'avatarbase' %}
+
+    <div class="card mycard shadow zoom  mybanner {{b1.Category}}" onclick="location.href='/post/{{b1.id}}';">
+      <div class="card-body">
+        <div class="row mid">
+          <div class="col-6">
+            <div class="row">
+              <div class="col-4 mid"><img src="/media/{{b1.Avatar}}" class="rounded-circle img-fluid"></div>
+              <div class="col-8 mid"> <h6>{{b1.Title}}  </h6></div>
+            </div>
+            <div class="row">
+              <div class="divintro mid"><span class="intro"> {{b1.SubTitle|safe}}</span></div>
+            </div>
+          </div>
+          <div class="col-6 mid">
+            <div class="divintro"><p class="card-text">{{b1.Text|safe|mystrip|safe|slice:":130"}}</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% endif %}
+   {% endfor %}
+</div>
+</div>
+
+<!--
+<div class="row" style="background-color:rgb(149,53,102);">
  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
    <ol class="carousel-indicators">
      {% for b1,b2 in banners %}
@@ -231,11 +303,12 @@
   </a>
  </div>
 </div>
-
+-->
 <div class="card-columns" style="margin-left: 2% ; margin-right: 2%">
   {% for post in posts %}
+
   {% if post.Type == 'avatarbase' %}
-  <div class="card mycard zoom mypost {{post.Category}}" onclick="location.href='/post/{{post.id}}';">
+  <div class="card mycard zoom box mypost {{post.Category}}" onclick="location.href='/post/{{post.id}}';">
     {%if post.Category == 'article' %} <div class="card-header" style="background-color: #00aeef;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
     {%if post.Category == 'LM' %} <div class="card-header" style="background-color: #28ef7d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
     {%if post.Category == 'LN' %} <div class="card-header" style="background-color: #e2ef4d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
@@ -265,7 +338,7 @@
   </div>
   {% endif %}
   {% if post.Type == 'bigimage' %}
-  <div class="card mycard zoom mypost {{post.Category}}" onclick="location.href='/post/{{post.id}}';">
+  <div class="card mycard zoom box mypost {{post.Category}}" onclick="location.href='/post/{{post.id}}';">
     {%if post.Category == 'article' %} <div class="card-header" style="background-color: #00aeef;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
     {%if post.Category == 'LM' %} <div class="card-header" style="background-color: #28ef7d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
     {%if post.Category == 'LN' %} <div class="card-header" style="background-color: #e2ef4d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
@@ -296,7 +369,7 @@
 
   {% if post.Type == 'thumbbase' %}
 
-  <div class="card mycard zoom mypost {{post.Category}}" onclick="location.href='/post/{{post.id}}';">
+  <div class="card mycard zoom box mypost {{post.Category}}" onclick="location.href='/post/{{post.id}}';">
     {%if post.Category == 'article' %} <div class="card-header" style="background-color: #00aeef;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
     {%if post.Category == 'LM' %} <div class="card-header" style="background-color: #28ef7d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
     {%if post.Category == 'LN' %} <div class="card-header" style="background-color: #e2ef4d;  height: 0.35rem; padding: 0 !important;"></div> {% endif %}
@@ -328,13 +401,10 @@
 
 
 
-
 </div>
 <script type="text/javascript" src="{% static 'js/js.js' %}"></script>
 <script>
-$(function(){
-$('.carousel').carousel()
-});
+
 
 $(document).ready(function(){
     var x = document.getElementsByClassName("card-text");
@@ -345,19 +415,63 @@ for (i = 0; i < x.length; i++) {
 
 
 
+
+
+
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:20,
+    nav:true,
+    rtl:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:2
+        }
+    }
+});
+
+
+
+
+
     });
+
+
 
 function filter(category) {
     var divsToHide = document.getElementsByClassName("mypost"); //divsToHide is an array
+    var bannerToHide = document.getElementsByClassName("mybanner"); //divsToHide is an array
     var divsToShow = document.getElementsByClassName(category); //divsToHide is an array
+    var bannerToShow = document.getElementsByClassName(category); //divsToHide is an array
     for(var i = 0; i < divsToHide.length; i++){
         divsToHide[i].style.visibility = "hidden"; // or
         divsToHide[i].style.display = "none"; // depending on what you're doing
     }
+
+    for(var i = 0; i < bannerToHide.length; i++){
+        bannerToHide[i].parentElement.style.visibility = "hidden"; // or
+        bannerToHide[i].parentElement.style.display = "none";
+    }
+
     for(var i = 0; i < divsToShow.length; i++){
         divsToShow[i].style.visibility = "visible"; // or
         divsToShow[i].style.display = "inline-block"; // depending on what you're doing
     }
+
+
+    for(var i = 0; i < bannerToShow.length; i++){
+        bannerToShow[i].parentElement.style.visibility = "visible"; // or
+        bannerToShow[i].parentElement.style.display = "inline-block"; // depen// ding on what you're doing
+    }
+
+
+
 
 }
 

@@ -145,3 +145,25 @@ line-height: 1.8 !important;
 
 
 
+
+
+
+
+
+.owl-carousel,
+.bx-wrapper { direction: ltr; }
+.owl-carousel .owl-item { direction: rtl; }
+
+
+
+.owl-carousel .owl-stage {
+    display: flex;
+}
+
+.owl-carousel .owl-item .card {
+    width: auto;
+    height: 80%;
+    margin-right:5% ;
+    margin-left:5% ;
+
+}
