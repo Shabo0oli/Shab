@@ -13,7 +13,6 @@ $('.carousel.carousel-multi .item').each(function () {
 	else {
 		$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
 	}
-	$('.box').matchHeight();
 });
 
 
@@ -29,16 +28,5 @@ $('#form-comment').on('submit',function (e) {
         document.getElementById("form-comment").reset();
     }
     });
-});
-
-
-
-$('#carouselExampleIndicators').bind('slide.bs.carousel', function (e) {
-    $('.box').matchHeight();
-});
-
-    $("#carouselExampleIndicators").on("slid", function(){
-    // do something
-        $('.box').matchHeight();
 });
 

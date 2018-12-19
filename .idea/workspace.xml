@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d9d0f9f-f111-482a-bbad-70fdac106ec8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/static/js/js.js" afterPath="$PROJECT_DIR$/shab/web/static/js/js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/templates/index.html" afterPath="$PROJECT_DIR$/shab/web/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shab/web/templates/template.html" afterPath="$PROJECT_DIR$/shab/web/templates/template.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shab/web/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2128">
-              <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="35" />
+            <state relative-caret-position="408">
+              <caret line="362" column="0" lean-forward="true" selection-start-line="362" selection-start-column="0" selection-end-line="362" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -112,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="js.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="js.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shab/web/static/js/js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="3" lean-forward="false" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+            <state relative-caret-position="51">
+              <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -125,8 +127,8 @@
       <file leaf-file-name="template.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shab/web/templates/template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="49" column="4" lean-forward="false" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+            <state relative-caret-position="348">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -186,12 +188,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>strip_tags(</find>
-      <find>MLStripper</find>
-      <find>striptags('&lt;br&gt;')</find>
-      <find>strip</find>
-      <find>stripta</find>
-      <find>_strip_once</find>
       <find>_feed</find>
       <find>feed(va</find>
       <find>feed(v</find>
@@ -208,7 +204,6 @@
       <find>once_strip</find>
       <find>s</find>
       <find>strip_</find>
-      <find>strip_tags</find>
       <find>striptags</find>
       <find>mystrip|safe</find>
       <find>&lt;/span&gt;&lt;/span&gt;</find>
@@ -216,6 +211,13 @@
       <find>zoom</find>
       <find>sldr</find>
       <find>zoom box</find>
+      <find>strip_tags</find>
+      <find>ma</find>
+      <find>mathch</find>
+      <find>mathc</find>
+      <find>math</find>
+      <find>match</find>
+      <find>matchH</find>
     </findStrings>
     <replaceStrings>
       <replace>item</replace>
@@ -268,9 +270,9 @@
         <option value="$PROJECT_DIR$/shab/web/templates/post23.html" />
         <option value="$PROJECT_DIR$/shab/web/templatetags/__init__.py" />
         <option value="$PROJECT_DIR$/shab/web/templatetags/mytags.py" />
-        <option value="$PROJECT_DIR$/shab/web/templates/index.html" />
-        <option value="$PROJECT_DIR$/shab/web/templates/template.html" />
         <option value="$PROJECT_DIR$/shab/web/static/js/js.js" />
+        <option value="$PROJECT_DIR$/shab/web/templates/template.html" />
+        <option value="$PROJECT_DIR$/shab/web/templates/index.html" />
       </list>
     </option>
   </component>
@@ -1143,10 +1145,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/templates/post23.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2309">
+          <caret line="164" column="19" lean-forward="false" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/templates/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shab/web/static/js/js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/shab/web/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2128">
-          <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="35" />
+        <state relative-caret-position="408">
+          <caret line="362" column="0" lean-forward="true" selection-start-line="362" selection-start-column="0" selection-end-line="362" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1193,30 +1219,6 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#9;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#9;n#div#2;n#div#1;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/templates/post23.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2309">
-          <caret line="164" column="19" lean-forward="false" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/templates/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="49" column="4" lean-forward="false" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shab/web/static/js/js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="3" lean-forward="false" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
