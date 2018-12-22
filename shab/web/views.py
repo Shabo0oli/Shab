@@ -17,6 +17,7 @@ from django.http import JsonResponse
 from json import JSONEncoder
 from django.contrib.sessions.models import Session
 from django.http import Http404,HttpResponseNotFound
+from django.db.models import Q
 
 
 
@@ -314,3 +315,16 @@ def related(request , mainid):
 
 def notfount(request) :
     return HttpResponseNotFound('<h1>Page not found</h1>')
+
+
+@csrf_exempt
+def search(request):
+    searchText = request.POST['search']
+    posts = Post.objects.filter(Q(Text__contains = searchText) | Q(Title__contains = searchText)
+                                | Q(SubTitle__contains=searchText)
+                                | Q(About__contains=searchText))
+    context = {}
+    context['posts'] = posts
+    banners = Post.objects.filter(id__in=Banner.objects.values('PostLink'))
+    context['banners2'] = banners
+    return render(request, 'index.html', context)

@@ -36,9 +36,10 @@
       <li class="nav-item"> <a class="nav-link" href="javascript:filter('PW');">پادساعت</a></li>
       <li class="nav-item"> <a class="nav-link" href="javascript:filter('PZ');">پژوهش</a></li>
       <li class="nav-item"> <a class="nav-link" href="javascript:filter('GG');">گفتگو</a></li>
-      <li class="nav-item">
-
-      </li>
+      <li class="nav-item"> <button type="button" class="btn btn-primary-outline" style=" background-color: transparent;
+  " data-toggle="modal" data-target="#searchModal">
+  <i class="fa fa-search" aria-hidden="true" style="color: white"></i>
+</button></li>
     </ul>
 
   </div>
@@ -48,6 +49,30 @@
 </nav>
 
 
+
+
+    <!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <form method="post" action="/search/">
+      <div class="modal-body">
+
+            <input name="search" class="form-control form-control-lg" type="text" placeholder="جستجو...">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">جستجو</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
 
 
 <div class="row" style="background-color:rgb(149,53,102);">

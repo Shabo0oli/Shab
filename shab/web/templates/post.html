@@ -4,7 +4,7 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html   lang="fa" dir="rtl">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,247 +14,333 @@
     <link rel="icon" href="{% static 'favicon.ico' %}">
 
 
-      <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css" integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css" integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous">
 
-  <!-- jQuery library -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js" integrity="sha384-54+cucJ4QbVb99v8dcttx/0JRx4FHMmhOWi4W+xrXpKcsKQodCBwAvu3xxkZAwsH" crossorigin="anonymous"></script>
-
-
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="{% static 'css/style.css' %}" >
-<script type="text/javascript" src="{% static 'js/js.js' %}"></script>
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js" integrity="sha384-54+cucJ4QbVb99v8dcttx/0JRx4FHMmhOWi4W+xrXpKcsKQodCBwAvu3xxkZAwsH" crossorigin="anonymous"></script>
 
 
-
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-
-
-  <script>
-  $(document).ready(function(){
-    $(".heart").click(function() {
-      var $this = $(this);
-      $.ajax({
-        url: '/like/',
-        cache: false,
-        type: 'POST',
-        data : { postid : '{{post.id}}'  },
-        success: function(json_obj) {
-        if (json_obj.response == '200') {
-            $this.toggleClass('far fa');
-            $this.toggleClass('gray red');
-            document.getElementById("likenumber").textContent = json_obj.count.toString()
-        }
-    }
-    });
-
-    });
-  });
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    <script type="text/javascript" src="{% static 'js/js.js' %}"></script>
 
 
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            $(".heart").click(function() {
+                var $this = $(this);
+                $.ajax({
+                    url: '/like/',
+                    cache: false,
+                    type: 'POST',
+                    data : { postid : '{{post.id}}'  },
+                    success: function(json_obj) {
+                        if (json_obj.response == '200') {
+                            $this.toggleClass('far fa');
+                            $this.toggleClass('gray red');
+                            document.getElementById("likenumber").textContent = json_obj.count.toString()
+                        }
+                    }
+                });
+
+            });
+        });
 
 
 
 
-  </script>
+
+
+
+
+
+    </script>
 
     <title>شب روایت</title>
 
 
 
-  </head>
+</head>
 
-  <body style="background: linear-gradient( rgb(71,157 , 185) 60%, rgb(224,224,224) 60%);
+<body style="background: linear-gradient( rgb(71,157 , 185) 60%, rgb(224,224,224) 60%);
  background-repeat: no-repeat;
  background-color: rgb(224,224,224);">
 
 
 
-        <!-- Page Content -->
+<!-- Page Content -->
 
 
 
-  <nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg">
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i> </span>
-  </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i> </span>
+    </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">لذت متن <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">لذت نقد</a>
-        </li>
+        <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item col-2 brand">
-        <a href="{% url 'index' %}"> <img src="{% static 'img/brand.png' %}" class="img-fluid"> </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item"> <a class="nav-link" href="#">چهل سالگی</a></li>
-        <li class="nav-item"> <a class="nav-link" href="#">پادساعت</a></li>
-        <li class="nav-item"> <a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
-      </ul>
+            <li class="nav-item col-2 brand active">
+                <a href="{% url 'index' %}"> <img src="{% static 'img/brand.png' %}" class="img-fluid"> </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item"> <button type="button" class="btn btn-primary-outline" style=" background-color: transparent;
+  " data-toggle="modal" data-target="#searchModal">
+                <i class="fa fa-search" aria-hidden="true" style="color: white"></i>
+            </button></li>
+        </ul>
 
     </div>
-  </nav>
+</nav>
 
 
 
+<!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" action="/search/">
+                <div class="modal-body">
 
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-8">
+                    <input name="search" class="form-control form-control-lg" type="text" placeholder="جستجو...">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">جستجو</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
         <div class="card mycard">
             <div class="card-header">
                 {% if post.Category == 'LM' %}
                 لذت متن
                 {% endif %}
                 {% if post.Category == 'article' %}
-سرمقاله
+                سرمقاله
                 {% endif %}
                 {% if post.Category == 'LN' %}
-               لذت نقد
+                لذت نقد
                 {% endif %}
                 {% if post.Category == 'PZ' %}
-               پژوهش
+                پژوهش
                 {% endif %}
                 {% if post.Category == 'GG' %}
                 گفتگو
                 {% endif %}
                 {% if post.Category == 'LK' %}
-               لذت کشف
+                لذت کشف
                 {% endif %}
                 {% if post.Category == 'RS' %}
                 به روایت شما
                 {% endif %}
 
-                                {% if post.Category == 'chel' %}
-چهل سالگی
+                {% if post.Category == 'chel' %}
+                چهل سالگی
                 {% endif %}
 
-                                {% if post.Category == 'PW' %}
-               پادساعت
+                {% if post.Category == 'PW' %}
+                پادساعت
                 {% endif %}
             </div>
-          <div class="card-body">
-            <div class="card-title">
-              <div class="row">
-                <div class="col-2">
-                  <img src="/media/{{post.Avatar}}" class="rounded-circle img-fluid">
-                </div>
-                <div class="col-7 mid">
-                  <h6> {{post.Title}}  </h6>
-                </div>
-                <div class="col-3 mid">
-                  <span class="icon"><i id="likenumber" class=" heart {{classattr}} fa-heart ">{{likesnumber}}</i></span>
-                  <span class="icon"><i class=" share fas fa-share-square gray"></i></span>
-                </div>
-              </div>
-            </div>
-            <div class="divintro"><span class="intro">{{post.SubTitle}}</span></div>
-            <div class="divintro" style=" margin: 5%;"><p class="card-text">{{post.Text|safe}}</p></div>
-            <div class="row">
-              {% for tag in tags %}
-                              <a class="bdg" href="/tag/{{tag}}"> <span class="bdg badge badge-pill badge-secondary">&nbsp&nbsp{{tag}}&nbsp&nbsp</span> </a>
-              {% endfor %}
+            <div class="card-body">
+                <div class="card-title">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="/media/{{post.Avatar}}" class="rounded-circle img-fluid">
+                        </div>
+                        <div class="col-7 mid">
+                            <h6> {{post.Title}}  </h6>
+                        </div>
+                        <div class="col-3 mid">
+                            <span class="icon"><i id="likenumber" class=" heart {{classattr}} fa-heart ">{{likesnumber}}</i></span>
 
 
-              </div>
-          </div>
- {% if relatedposts %}
- <div class="card-footer text-center">
-            <div class=""> <h5> مطالب مرتبط </h5> </div>
-                   <div class="row">
+                            <span class="icon">
 
-              {% for relpost in relatedposts %}
-              <div class="col-4">
-                <div class="card mycard zoom" onclick="location.href='/post/{{relpost.related.id}}';">
-                  <div class="card-header">
-                        <div class="card-text"> <h8>{{relpost.related.Title}} </h8> </div>
+                        <button type="button" class="btn btn-primary-outline" style=" background-color: transparent;
+  " data-toggle="modal" data-target="#shareModal">
+  <i class=" share fas fa-share-square gray"></i>
+</button>
+
+
+
+                    </span>
+                        </div>
                     </div>
-                  <div class="card-body">
-                      <div class="row">
-                          <div class="col-6"> <img class="img-fluid" src="/media/{{post.PostImage}}" style="border-radius: 5%;" ></div>
-                          <div class="col-6">{{relpost.related.SubTitle}}</div>
-                      </div>
-                  </div>
                 </div>
-              </div>
-              {% endfor %}
-                   </div>
+                <div class="divintro"><span class="intro">{{post.SubTitle}}</span></div>
+                <div class="divintro" style=" margin: 5%;"><p class="card-text">{{post.Text|safe}}</p></div>
+                <div class="row">
+                    {% for tag in tags %}
+                    <a class="bdg" href="/tag/{{tag}}"> <span class="bdg badge badge-pill badge-secondary">&nbsp&nbsp{{tag}}&nbsp&nbsp</span> </a>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+            {% if relatedposts %}
+            <div class="card-footer text-center">
+                <div class=""> <h5> مطالب مرتبط </h5> </div>
+                <div class="row">
+
+                    {% for relpost in relatedposts %}
+                    <div class="col-4">
+                        <div class="card mycard zoom" onclick="location.href='/post/{{relpost.related.id}}';">
+                            <div class="card-header">
+                                <div class="card-text"> <h8>{{relpost.related.Title}} </h8> </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6"> <img class="img-fluid" src="/media/{{post.PostImage}}" style="border-radius: 5%;" ></div>
+                                    <div class="col-6">{{relpost.related.SubTitle}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
 
             </div>
-        {% endif %}
+            {% endif %}
         </div>
-      </div>
-      <div class="col-2">
-      </div>
     </div>
-  </div>
-
-
-
-
-
-
-        <div class="row">
-            <div class="col-2">
-
-            </div>
-            <div class="col-8">
-              <div class="card mycard" style="margin-top: 3% !important;" >
-                <div class="card-header text-center "> <h5>نظرات</h5> </div>
-                 <ul class="list-group list-group-flush">
-                   {% for cm in comments %}
-                  <li class="list-group-item"><b>{{cm.Author}}  : </b>  {{cm.Text}}</li>
-                   {% endfor %}
-                 </ul>
-
-  <div class="card-footer">
-    <form id="form-comment" method="post">
-        <div class="form-group">
-          {% csrf_token %}
+    <div class="col-2">
     </div>
-            <input type="hidden" name="postid" value="{{post.id}}" >
-
-  <div class="form-group row">
-    <label for="name" class="col-sm-2 col-form-label">نام کامل شما</label>
-    <div class="col-sm-10">
-      <input type="text"  id='name' name='name' required  class="form-control">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="email" class="col-sm-2 col-form-label">پست الکترونیک</label>
-    <div class="col-sm-10">
-      <input type="text" name="email" class="form-control" required id="email" >
-    </div>
-  </div>
-
-        <div class="form-group row">
-    <label for="text" class="col-sm-2 col-form-label">نظر شما </label>
-    <div class="col-sm-10">
-      <textarea type="text" name="text" class="form-control" required id="text"> </textarea>
-    </div>
-  </div>
-
-      <div class="form-group row">
-    <div class="col-sm-12">
-    <button type="submit" class="btn btn-primary btn-block">ارسال نظر</button>
-    </div>
-  </div>
-</form>
-  </div>
 </div>
+</div>
+
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="background-color:transparent; border:none;">
+
+            <div class="row">
+                <div class="col-1">
+                    <button class="button social twitter" style="display: inline-block"  data-sharer="twitter" data-title="{{post.Title}} {{ request.META.HTTP_HOST }}{{ request.path }}" data-hashtags="{% for tag in tags %} {{tag}}, {% endfor %}" data-url="{{ request.META.HTTP_HOST }}{{ request.path }}">
+                        <i class="fab fa-twitter fa-lg" aria-hidden="true" style="color: white"></i>
+                    </button>
+                </div>
+                <div class="col-1">
+
+                    <button class="button  social telegram" style="display: inline-block" data-sharer="telegram" data-title="{{post.Title}}" data-url="{{ request.META.HTTP_HOST }}{{ request.path }}">
+                        <i class="fab fa-telegram-plane fa-lg" aria-hidden="true" style="color: white"></i>
+                    </button>
+                </div>
+
+
+                <div class="col-1">
+
+                    <button class="button social facebook" data-sharer="facebook"  data-url="{{ request.META.HTTP_HOST }}{{ request.path }}">
+                        <i class="fab fa-facebook-f fa-lg" aria-hidden="true" style="color: white"></i>
+                    </button>
+                </div>
+
+
+                  <div class="col-1">
+
+                <button class="button social linkedin" data-sharer="linkedin" data-url="{{ request.META.HTTP_HOST }}{{ request.path }}">
+                        <i class="fab fa-linkedin fa-lg" aria-hidden="true" style="color: white"></i>
+                    </button>
+                </div>
+
+
+
+                <div class="col-1">
+
+
+                    <button class="button social email" data-sharer="email" data-title="{{post.Title}}  -  {{post.Text|striptags}}" data-url="{{ request.META.HTTP_HOST }}{{ request.path }}" data-subject="{{post.Title}}">
+                        <i class="far fa-envelope fa-lg" aria-hidden="true" style="color: white"></i>
+                    </button>
+                </div>
+
+
+
+
             </div>
-          </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="row">
+    <div class="col-2">
+
+    </div>
+    <div class="col-8">
+        <div class="card mycard" style="margin-top: 3% !important;" >
+            <div class="card-header text-center "> <h5>نظرات</h5> </div>
+            <ul class="list-group list-group-flush">
+                {% for cm in comments %}
+                <li class="list-group-item"><b>{{cm.Author}}  : </b>  {{cm.Text}}</li>
+                {% endfor %}
+            </ul>
+
+            <div class="card-footer">
+                <form id="form-comment" method="post">
+                    <div class="form-group">
+                        {% csrf_token %}
+                    </div>
+                    <input type="hidden" name="postid" value="{{post.id}}" >
+
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-2 col-form-label">نام کامل شما</label>
+                        <div class="col-sm-10">
+                            <input type="text"  id='name' name='name' required  class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-2 col-form-label">پست الکترونیک</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="email" class="form-control" required id="email" >
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="text" class="col-sm-2 col-form-label">نظر شما </label>
+                        <div class="col-sm-10">
+                            <textarea type="text" name="text" class="form-control" required id="text"> </textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-primary btn-block">ارسال نظر</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript" src="{% static 'js/js.js' %}"></script>
 
@@ -262,13 +348,13 @@
 
 
 
-        <!-- /.container -->
+<!-- /.container -->
 
-        <!-- jQuery -->
-
-
+<!-- jQuery -->
 
 
 
-      </body>
-    </html>
+
+
+</body>
+</html>

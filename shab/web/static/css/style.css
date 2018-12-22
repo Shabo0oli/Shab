@@ -167,3 +167,48 @@ line-height: 1.8 !important;
     margin-left:5% ;
 
 }
+
+
+
+
+
+
+.social {
+    border-radius: 50%;
+    border: none;
+    width: 35px;
+    height: 35px;
+      text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.twitter {
+    background-color: #00AEEF;
+
+}
+
+
+.telegram {
+    background-color: #2ba1de;
+
+}
+
+
+
+.facebook  {
+    background-color: #3b5998;
+
+}
+
+
+.linkedin{
+
+    background-color: #007AB5;
+
+
+}
+
+.envelope{
+    background-color: slategray;
+}
