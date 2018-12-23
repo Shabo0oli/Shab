@@ -31,7 +31,11 @@ def dashboard(request):
 def index(request):
     context = {}
     posts = Post.objects.all().order_by('-Date')
-    context['posts'] = posts
+    conf = Config.objects.get()
+    if conf.ShowOrder == 'Date':
+        context['posts'] = posts.order_by('-Date')
+    if conf.ShowOrder == 'Index':
+        context['posts'] = posts.order_by('Index')
     banners = Post.objects.filter(id__in=Banner.objects.values('PostLink'))
     context['banners2'] = banners
     a = []
@@ -115,6 +119,7 @@ def posts(request):
     posts = Post.objects.all()
     context = {}
     context['posts'] = posts
+    context['config'] = Config.objects.get()
     return render(request, 'app/tables_dynamic.html', context)
 
 
@@ -324,7 +329,41 @@ def search(request):
                                 | Q(SubTitle__contains=searchText)
                                 | Q(About__contains=searchText))
     context = {}
-    context['posts'] = posts
+    conf = Config.objects.get()
+    if conf.ShowOrder == 'Date' :
+        context['posts'] = posts.order_by('Date')
+    if conf.ShowOrder == 'Index':
+        context['posts'] = posts.order_by('Index')
     banners = Post.objects.filter(id__in=Banner.objects.values('PostLink'))
     context['banners2'] = banners
     return render(request, 'index.html', context)
+
+
+@login_required
+@csrf_exempt
+def newindex(request) :
+    postid = request.POST['postid']
+    newindex = request.POST['index']
+    post = Post.objects.get(id=postid)
+    post.Index = newindex
+    post.save()
+    posts = Post.objects.all()
+    context = {}
+    context['posts'] = posts
+    context['config'] = Config.objects.get()
+    return render(request, 'app/tables_dynamic.html', context)
+
+@login_required
+@csrf_exempt
+def config(request) :
+    if 'showOrder' in request.POST :
+        conf = Config.objects.get()
+        conf.ShowOrder = request.POST['showOrder']
+        conf.save()
+    posts = Post.objects.all()
+    context = {}
+    context['posts'] = posts
+    context['config'] = Config.objects.get()
+    return render(request, 'app/tables_dynamic.html', context)
+
+

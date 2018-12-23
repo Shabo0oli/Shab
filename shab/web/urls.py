@@ -18,8 +18,10 @@ urlpatterns = [
     url(r'^post/([0-9]*)/$', views.post, name='post'),
     url(r'^tag/(.*)/$', views.tag, name='tag'),
     url(r'^search/$', views.search, name='search'),
+    url(r'^newindex/$', views.newindex, name='newindex'),
     url(r'^delpost/([0-9]*)/$', views.delpost, name='delpost'),
     url(r'^editpost/([0-9]*)/$', views.editpost, name='editpost'),
+    url(r'^config/$', views.config, name='config'),
     url(r'^logout/$', views.logout_view, name='logout'),
     url(r'^.*/$', views.notfount, name='notfount'),
 

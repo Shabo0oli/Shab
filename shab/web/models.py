@@ -24,6 +24,7 @@ class Post(models.Model):
     AparatLink = models.TextField(null=True, blank=True)
     PostImage = models.ImageField(upload_to='static/image/post/', null=True , blank=True)
     tags = TaggableManager()
+    Index = models.IntegerField(default=0)
 
 
 class Comment(models.Model):
@@ -47,3 +48,6 @@ class Banner(models.Model) :
 class RelatedPost(models.Model):
     MainPost = models.ForeignKey(Post , related_name='main' ,  on_delete=models.CASCADE)
     related = models.ForeignKey(Post, related_name='related' , on_delete=models.CASCADE)
+
+class Config(models.Model):
+    ShowOrder = models.TextField(default='Date')
