@@ -245,9 +245,11 @@
                 </div>
                 <div class="col-1">
 
-                    <button class="button  social telegram" style="display: inline-block" data-sharer="telegram" data-title="{{post.Title}}" data-url="{{ request.META.HTTP_HOST }}{{ request.path }}">
+                    <a href="https://telegram.me/share/url?url={{ request.META.HTTP_HOST }}{{ request.path }}&text={{post.Title}}" target="_blank">
+                    <button class="button  social telegram" style="display: inline-block" >
                         <i class="fab fa-telegram-plane fa-lg" aria-hidden="true" style="color: white"></i>
                     </button>
+                        </a>
                 </div>
 
 
