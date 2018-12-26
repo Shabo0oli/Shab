@@ -31,6 +31,12 @@ def mystrip(value):
             skip = 1
             if value[i:i+2] == '<p' or value[i:i+2] == '<h':
                 res += '<p class="card-text">'
+            if value[i:i+6] == '<style' :
+                while value[i:i+8] != '</style>' :
+                    i +=1
+                i+=8
+                skip = 0
+                continue
             i += 1
             continue
         if value[i] == '>' and skip:
