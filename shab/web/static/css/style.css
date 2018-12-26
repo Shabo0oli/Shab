@@ -95,7 +95,10 @@ line-height: 1.8 !important;
 
 .divintro{
   margin-bottom: 2rem;
-  background-color: rgb(242,245,242);
+}
+
+.divint {
+      background-color: rgb(242,245,242);
   border-radius: 3%;
 }
 
