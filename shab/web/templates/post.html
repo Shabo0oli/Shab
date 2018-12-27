@@ -239,13 +239,13 @@
 
             <div class="row">
                 <div class="col-1">
-                    <button class="button social twitter" style="display: inline-block"  data-sharer="twitter" data-title="{{post.Title}}   -    {{ request.META.HTTP_HOST }}{{ request.path }}" data-hashtags="{% for tag in tags %} {{tag}}, {% endfor %}" data-url="{{ request.META.HTTP_HOST }}{{ request.path }}">
+                    <button class="button social twitter" style="display: inline-block"  data-sharer="twitter" data-title="{{post.Title}}   -    http://{{ request.META.HTTP_HOST }}{{ request.path }}" data-hashtags="{% for tag in tags %} {{tag}}, {% endfor %}" data-url="http://{{ request.META.HTTP_HOST }}{{ request.path }}">
                         <i class="fab fa-twitter fa-lg" aria-hidden="true" style="color: white"></i>
                     </button>
                 </div>
                 <div class="col-1">
 
-                    <a href="https://telegram.me/share/url?url={{ request.META.HTTP_HOST }}{{ request.path }}&text={{post.Title}}" target="_blank">
+                    <a href="https://telegram.me/share/url?url=http://{{ request.META.HTTP_HOST }}{{ request.path }}&text={{post.Title}}" target="_blank">
                     <button class="button  social telegram" style="display: inline-block" >
                         <i class="fab fa-telegram-plane fa-lg" aria-hidden="true" style="color: white"></i>
                     </button>
@@ -255,7 +255,7 @@
 
                 <div class="col-1">
 
-                    <button class="button social facebook" data-sharer="facebook"  data-url="{{ request.META.HTTP_HOST }}{{ request.path }}">
+                    <button class="button social facebook" data-sharer="facebook"  data-url="http://{{ request.META.HTTP_HOST }}{{ request.path }}">
                         <i class="fab fa-facebook-f fa-lg" aria-hidden="true" style="color: white"></i>
                     </button>
                 </div>
@@ -263,7 +263,7 @@
 
                   <div class="col-1">
 
-                <button class="button social linkedin" data-sharer="linkedin" data-url="{{ request.META.HTTP_HOST }}{{ request.path }}">
+                <button class="button social linkedin" data-sharer="linkedin" data-url="http://{{ request.META.HTTP_HOST }}{{ request.path }}">
                         <i class="fab fa-linkedin fa-lg" aria-hidden="true" style="color: white"></i>
                     </button>
                 </div>
@@ -273,7 +273,7 @@
                 <div class="col-1">
 
 
-                    <button class="button social email" data-sharer="email" data-title="{{post.Title}}  -  {{post.Text|striptags}}" data-url="{{ request.META.HTTP_HOST }}{{ request.path }}" data-subject="{{post.Title}}">
+                    <button class="button social email" data-sharer="email" data-title="{{post.Title}}  -  {{post.Text|striptags}}" data-url="http://{{ request.META.HTTP_HOST }}{{ request.path }}" data-subject="{{post.Title}}">
                         <i class="far fa-envelope fa-lg" aria-hidden="true" style="color: white"></i>
                     </button>
                 </div>
@@ -341,28 +341,7 @@
                 </form>
             </div>
 
-            <div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-var disqus_config = function () {
-this.page.url = 'http://{{ request.META.HTTP_HOST }}{{ request.path }}';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '/post.id/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://asrerevayat-ir.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
+            
 
         </div>
     </div>
