@@ -2,6 +2,8 @@ from django.db import models
 from django_jalali.db import models as jmodels
 from taggit.managers import TaggableManager
 from django.contrib.sessions.models import Session
+from mptt.models import MPTTModel, TreeForeignKey
+
 
 
 
@@ -27,7 +29,7 @@ class Post(models.Model):
     Index = models.IntegerField(default=0)
 
 
-class Comment(models.Model):
+class Comment(MPTTModel):
     RelPost = models.ForeignKey(Post,on_delete=models.CASCADE)
     Text = models.TextField()
     Author = models.CharField(max_length=50)
@@ -36,6 +38,11 @@ class Comment(models.Model):
     models.DateTimeField(default=datetime.datetime.now())
     Email = models.EmailField(null=True)
     Valid = models.BooleanField(default=False)
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
+
+    class MPTTMeta:
+        order_insertion_by = ['Date']
+
 
 class Like(models.Model):
     RelPost = models.ForeignKey(Post,on_delete=models.CASCADE)

@@ -216,3 +216,13 @@ line-height: 1.8 !important;
 .envelope{
     background-color: slategray;
 }
+
+.mylist{
+    border-color: lightslategray !important;
+    padding: 2%;
+    background-color: whitesmoke;
+}
+
+.myreply {
+    color: midnightblue;
+}

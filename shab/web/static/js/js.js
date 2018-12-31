@@ -30,5 +30,16 @@ $('#form-comment').on('submit',function (e) {
     });
 });
 
+function addreply(replyid , author)
+{
+document.getElementById('replyid').value = replyid;
+document.getElementById('alert').innerHTML = 'در پاسخ به نظر « ' + author + ' »' ;
+document.getElementById('alertdiv').style.visibility = "visible";
+}
 
+
+function removereply() {
+    document.getElementById('replyid').value = '-1';
+    document.getElementById('alertdiv').style.visibility = "hidden";
+}
 

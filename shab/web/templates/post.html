@@ -302,7 +302,7 @@
             <div class="card-header text-center "> <h5>نظرات</h5> </div>
             <ul class="list-group list-group-flush">
                 {% for cm in comments %}
-                <li class="list-group-item"><b>{{cm.Author}}  : </b>  {{cm.Text}}</li>
+                <li class="list-group-item"><b>{{cm.Author}}  : </b>  {{cm.Text|striptags}}</li>
                 {% endfor %}
             </ul>
 

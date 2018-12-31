@@ -175,9 +175,13 @@ def comment(request) :
     email = request.POST['email']
     text = request.POST['text']
     postid = request.POST['postid']
+    replyid = int(request.POST['replyid'])
+    replycm = None
+    if replyid != -1:
+        replycm = Comment.objects.get(id=replyid)
     post = Post.objects.get(id=postid)
     currentDate = jdatetime.date.today()
-    cm = Comment(Text=text , Author=name , Email=email, RelPost=post , Date=currentDate)
+    cm = Comment(Text=text , Author=name , Email=email, RelPost=post , Date=currentDate , parent=replycm)
     cm.save()
     context = {}
     context['response'] = '200'
