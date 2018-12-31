@@ -318,19 +318,38 @@
             <div class="col-8">
               <div class="card mycard" style="margin-top: 3% !important;" >
                 <div class="card-header text-center "> <h5> نظرات </h5> </div>
-                 <ul class="list-group list-group-flush">
-                  {% for cm in comments %}
-                  <li class="list-group-item"><b>{{cm.Author}}  : </b>  {{cm.Text|striptags}}</li>
-                   {% endfor %}
-                          </ul>
+                 <ul class="list-group">
+                  {% recursetree comments %}
+                  <li class="list-group-item mylist">
+                      <b>{{node.Author}}  : </b>  {{node.Text|striptags}}
+                     <a href="javascript:addreply( {{ node.id }} , '{{node.Author}}' )"><i class="fa fa-reply myreply" aria-hidden="true"></i></a>
+            {% if not node.is_leaf_node %}
+                <ul class="children">
+                    {{ children }}
+                </ul>
+            {% endif %}
+                  </li>
+                       {% endrecursetree %}
+                  </ul>
 
-  <div class="card-footer">
-    <form id="form-comment" method="post">
-                  <div class="form-group">
-          {% csrf_token %}
-    </div>
+            <div class="card-footer">
 
-      <input type="hidden" name="postid" value="{{post.id}}" >
+
+                     <div id="alertdiv" class="alert alert-primary alert-dismissible fade show" role="alert" style="visibility: hidden;">
+          <p id="alert">  </p>
+  <button type="button" class="close" onclick="removereply()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+                <form id="form-comment" method="post">
+                    <div class="form-group">
+                        {% csrf_token %}
+                    </div>
+                    <input type="hidden" name="postid" value="{{post.id}}" >
+                                        <input type="hidden" id="replyid" name="replyid" value="-1" >
+
   <div class="form-group row">
     <label for="name" class="col-sm-2 col-form-label">نام کامل شما</label>
     <div class="col-sm-10">
