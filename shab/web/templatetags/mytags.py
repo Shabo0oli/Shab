@@ -49,3 +49,20 @@ def mystrip(value):
             continue
         i += 1
     return res
+
+@register.filter
+def myslice(value , arg):
+    arg = arg[1:]
+    res = value
+    can = False
+    if len(value) > int(arg) :
+        res = value[:int(arg)]
+        i = int(arg) - 1
+        while res[i] != '<' and i >= 0:
+            if res[i] == '>' :
+                can = True
+            i-=1
+        if res[i]=='<'  and can==False :
+            res = res[:i]
+    return res
+
