@@ -218,8 +218,8 @@
                     </div>
                   <div class="card-body">
                       <div class="row">
-                                   {% if relpost.related.Avatar == 'avatarbase' %}
-                                     <div class="col-6"> <img class="img-fluid" src="/media/{{relpost.related.PostImage}}" style="border-radius: 5%;" ></div>
+                                   {% if relpost.related.Type == 'avatarbase' %}
+                                     <div class="col-6"> <img class="img-fluid" src="/media/{{relpost.related.Avatar}}" style="border-radius: 5%;" ></div>
                                     <div class="col-6">{{relpost.related.SubTitle}}</div>
                                     {% else %}
                                     <div class="col-6"> <img class="img-fluid" src="/media/{{relpost.related.PostImage}}" style="border-radius: 5%;" ></div>
