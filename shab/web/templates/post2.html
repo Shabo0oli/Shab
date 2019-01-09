@@ -226,10 +226,10 @@
                       <div class="row">
                                    {% if relpost.related.Type == 'avatarbase' %}
                                      <div class="col-6"> <img class="img-fluid" src="/media/{{relpost.related.Avatar}}" style="border-radius: 5%;" ></div>
-                                    <div class="col-6">{{relpost.related.SubTitle}}</div>
+                                    <div class="col-6"><p class="card-text">{{relpost.related.SubTitle|slice:":100"}} . . . </p></div>
                                     {% else %}
                                     <div class="col-6"> <img class="img-fluid" src="/media/{{relpost.related.PostImage}}" style="border-radius: 5%;" ></div>
-                                    <div class="col-6">{{relpost.related.SubTitle}}</div>
+                                    <div class="col-6"><p class="card-text">{{relpost.related.SubTitle|slice:":100"}} . . . </p></div>
                                     {% endif %}
                       </div>
                   </div>
