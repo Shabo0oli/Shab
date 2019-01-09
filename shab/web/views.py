@@ -35,7 +35,7 @@ def index(request):
     if conf.ShowOrder == 'Date':
         context['posts'] = posts.order_by('-Date')
     if conf.ShowOrder == 'Index':
-        context['posts'] = posts.order_by('Index')
+        context['posts'] = posts.order_by('-Index')
     banners = Post.objects.filter(id__in=Banner.objects.values('PostLink'))
     context['banners2'] = banners
     a = []
